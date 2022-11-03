@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,24 +17,157 @@
     <link rel="stylesheet"
         href=" https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href = "/stylesheets/style.css">
+
 
 
 
 </head>
 
 <body>
-    <div style="padding: 20px;">
-        <h1>
 
-            Caramelised Apple Pasta <i class="bi bi-star-fill fa-xs" style="color:#FFD700;"></i><i
-                class="bi bi-star-fill fa-xs" style="color:#FFD700;"></i><i class="bi bi-star-fill fa-xs"
-                style="color:#FFD700;"></i><i class="bi bi-star-fill fa-xs" style="color:#FFD700;"></i><i
-                class="bi bi-star fa-xs"></i>
-            <button class='btn btn-success float-end'>Review Me</button>
-        </h1>
+    <!--navBar start Here-->
+   
+    <nav class="navbar navbar-expand-lg navbar-light static-top custom-navbar ">
+        <div class="container-fluid">
+          
+        
+  
+            <a class="navbar-brand mr-2" href="#">
+                <img src="/images/icon.JPG" alt="logoHere" height="48" class="rounded-circle" /> &nbsp;<b class="logo_title">EatBits</b>
+  
+            </a>
+            <button class="navbar-toggler" type="button" height="16" width="16" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="ml-auto mr-auto col-lg-4 col-md-12 p-0">
+                  <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" style="color:black">Search</button>
+                  </form>
+                </div>
+  
+  
+               
+            </div>
+  
+            <div class="dropdown dropstart">
+              <a class="btn btn-secondary " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-fill"></i>
+              </a>
+  
+              <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Your Preference Reports</a></li>
+                  <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                  <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                </ul>
+              </div>
+  
+  
+        </div>
+    </nav>
+  
 
-    </div>
+      <!--sidemenu>-->
+      <div class="wrapper">
 
+        <!-- Sidebar -->
+        <div class="col-lg-2 col-md-3 px-sm-2 px-md-0 py-1 custom-navbar-sidemenu">
+            <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
+              
+              <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
+
+                <li>
+                    <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-left " style="padding-top:40px">
+                       <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-search-heart-fill"></i> Recipes</span></i></a>
+                   
+                  </li>
+                
+                
+                <li>
+                  <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-left ">
+                     <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-file-bar-graph-fill"></i> Preference Report</span></a>
+                
+                </li>
+                <li>
+                  <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+                 <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>  Get Expert Advice</span>
+                  </a>
+                 
+                </li>
+              
+            
+              </ul>
+
+            
+  
+            </div>
+
+            <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
+              
+                <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
+                  <li>
+                    <a href="#" class="nav-link align-start px-0" style="padding-top:40px">
+                       <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-egg-fill"></i> Food
+                        </span>
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-left ">
+                       <span class="ms-1 sidemenu-buttons side-menu "><i class="bi bi-bell-fill"></i> Quiz</span></i></a>
+                   
+                  </li>
+                  <li>
+                    <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+                   <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-pin-map-fill"></i> Cuisine</span>
+                    </a>
+                   
+                  </li>
+                
+                 
+                 
+                </ul>
+  
+              
+    
+              </div>
+
+
+          </div>    
+
+
+    
+        <!-- Page Content -->
+        <div id="content">
+            <div style="padding: 20px;">
+                <h1>
+        
+                    Caramelised Apple Pasta <i class="bi bi-star-fill fa-xs" style="color:#FFD700;"></i><i
+                        class="bi bi-star-fill fa-xs" style="color:#FFD700;"></i><i class="bi bi-star-fill fa-xs"
+                        style="color:#FFD700;"></i><i class="bi bi-star-fill fa-xs" style="color:#FFD700;"></i><i
+                        class="bi bi-star fa-xs"></i>
+                    <button class='btn btn-success float-end'>Review Me</button>
+                </h1>
+        
+            </div>
+             
+
+ 
     <div class="container-fluid">
         <div class="row ">
             <div class="col-sm-6 p-3 border bg-light">
@@ -319,11 +453,79 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+        
+
+        </div>
+      
+    </div>   
+    
+      
+  
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
     -->
+
+    <!--footer-->
+
+    <footer class="text-center text-white" style="background-color: #f1f1f1;">
+        <!-- Grid container -->
+        <div class="container pt-4">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Twitter -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="bi bi-twitter"></i></a>
+      
+            <!-- Google -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="bi bi-google"></i></a>
+      
+            <!-- Instagram -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="bi bi-instagram"></i></a>
+      
+            <!-- Linkedin -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="bi bi-linkedin"></i></a>
+            <!-- Github -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="bi bi-github"></i></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-dark" href="https://mdbootstrap.com/">Team-14EatBits.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
 </body>
 
 </html>
