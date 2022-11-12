@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EatBits</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+  </head>
+  
+  <body>
+    <header class="text-white" style="background-color: rgba(0, 0, 0, 0.816);">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="/">
+
+            <img src="/images/icon.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+  
+            <b>EatBits</b>
+  
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="wrapper" style="height:825px;">
+
+        <!-- Sidebar -->
+      <div class="col-lg-2 col-md-3 px-sm-2 px-md-0 py-1 custom-navbar-sidemenu">
+            <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
+              
+              <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
+    
+                <li>
+                    <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-left " style="padding-top:40px">
+                       <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-search-heart-fill"></i> Recipes</span></i></a>
+                   
+                  </li>
+                
+                
+                <li>
+                  <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-left ">
+                     <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-file-bar-graph-fill"></i> Preference Report</span></a>
+                
+                </li>
+                <li>
+                  <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+                 <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>  Get Expert Advice</span>
+                  </a>
+                 
+                </li>           
+              </ul>    
+            </div>
+    
+            <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
+              
+                <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
+                  <li>
+                    <a href="#" class="nav-link align-start px-0" style="padding-top:40px">
+                       <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-egg-fill"></i> Food
+                        </span>
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-left ">
+                       <span class="ms-1 sidemenu-buttons side-menu "><i class="bi bi-bell-fill"></i> Quiz</span></i></a>
+                   
+                  </li>
+                  <li>
+                    <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+                   <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-pin-map-fill"></i> Cuisine</span>
+                    </a>
+                   
+                  </li>                
+                </ul>
+            </div>
+    
+    
+      </div>    
+
+      <!-- Page Content -->
+      <div id="content">
+          <div class="container-fluid" style="padding-left: 22%; padding-right: 15%;">
+              <div class="py-5 text-center">
+                  <h2>View and Update your Profile here....</h2>
+                  <p class="lead">Always keep up with your Profile to have updated information.</p>
+              </div>
+      
+              
+              <div class="row">
+                  <div class="col-md col-lg">
+                    <h4 class="mb-3">Personal Details</h4>
+                    <form class="needs-validation" novalidate="">
+                      <div class="row g-3" id="multiple age">
+
+                          <div class="col-12">
+                            <div class="row mb-3">
+                              <div class="col">
+                                <label for="children" class="form-label">Total number of children </label>
+                              </div>
+                              <div class="col"></div>
+                              <div class="col">
+                                <input type="text" name="children" id="child" class="form-control text-center" placeholder="1">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12">
+                            <table class="table table-borderless table-sm align-middle">
+                              <tbody>
+                                <tr>
+                                  <td width="33%">Age of the child</td>
+                                  <td width="35%"><input type="text" name="age" id="childage" class="w-100 form-control text-center" placeholder="(in years)"></td>
+                                  <td width="33%">
+                                    <button type="button" class="w-100 btn btn-success" onclick='addage()'>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 18">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                      </svg> Add age of another child
+                                    </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+      
+                          <div class="col-12">
+                              <label for="password" class="form-label">Any allergies the child/children might have?</label>
+                              <input type="text" name="allergy" id="allergy" class="form-control" placeholder="">
+                          </div>
+      
+                      </div>
+            
+                      <hr class="my-4">
+
+                      <div class="row">
+                          <div class="col">
+                              <button class="w-100 btn btn-success btn-lg" type="button" onclick="location.href='/profile';">Save changes</button>
+                          </div>
+                          <div class="col">
+                              <button type="button" class="w-100 btn btn-outline-success btn-lg" onclick="location.href='/dashboard';">Home page</button>
+                          </div>
+                          <hr class="my-4">
+                      </div>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <footer class="fixed-bottom text-center text-white" style="background-color: rgba(0, 0, 0, 0.816);">
+        <!-- Grid container -->
+        <div class="container pt-4">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Twitter -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-light m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="light"
+              ><i class="bi bi-twitter"></i></a>
+        
+            <!-- Google -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-light m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="light"
+              ><i class="bi bi-google"></i></a>
+        
+            <!-- Instagram -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-light m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="light"
+              ><i class="bi bi-instagram"></i></a>
+        
+            <!-- Linkedin -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-light m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="light"
+              ><i class="bi bi-linkedin"></i></a>
+            <!-- Github -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-light m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="light"
+              ><i class="bi bi-github"></i></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center text-light p-3">
+          © 2022 Copyright:
+          <a class="text-light" href="https://mdbootstrap.com/">Team-14EatBits.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+        <script>
+          function removeage() {
+            $(event.target).closest("tr").remove();
+          }
+
+          function addage() {
+            $("table").append("<tr><td>Age of the child</td><td><input type='text' name='age' id='childage' class='w-100 form-control text-center' placeholder='(in years)'></td><td><button type='button' class='w-100 btn btn-success' onclick='removeage()'><svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-x-circle-fill' viewBox='0 0 16 18'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z'/></svg> Remove age of a child</button></td></tr>");
+          }
+        </script>
+    </body>
+</html>
