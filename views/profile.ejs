@@ -15,7 +15,7 @@
     <header class="text-white" style="background-color: rgba(0, 0, 0, 0.816);">
       <nav class="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand text-white" href="/">
+          <a class="navbar-brand text-white" href="/dashboard">
 
             <img src="/images/icon.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
   
@@ -84,61 +84,64 @@
 
       <!-- Page Content -->
       <div id="content">
-          <div class="container-fluid" style="padding-left: 22%; padding-right: 15%;">
+          <div class="container-fluid" style="padding-left: 18%; padding-right: 8%;">
               <div class="py-5 text-center">
-                  <h2>View and Update your Profile here....</h2>
+                  <h2>Hey <%= user.firstname %> , View and Update your Profile here....</h2>
                   <p class="lead">Always keep up with your Profile to have updated information.</p>
               </div>
       
               
-              <div class="row">
+                <div class="row">
                   <div class="col-md col-lg">
                     <h4 class="mb-3">Personal Details</h4>
-                    <form class="needs-validation" novalidate="">
+                    <br>
+                    <form class="needs-validation" novalidate="" action="/profile" method = "POST">
                       <div class="row g-3" id="multiple age">
 
-                          <div class="col-12">
-                            <div class="row mb-3">
-                              <div class="col">
-                                <label for="children" class="form-label">Total number of children </label>
-                              </div>
-                              <div class="col"></div>
-                              <div class="col">
-                                <input type="text" name="children" id="child" class="form-control text-center" placeholder="1">
-                              </div>
+                        <div class="col-12">
+                          <div class="row mb-3">
+                            <div class="col">
+                              <label for="children" class="form-label">Total number of children </label>
+                            </div>
+                            <div class="col"></div>
+                            <div class="col">
+                              <input type="number" name="children" id="child" class="form-control text-center" placeholder= <%= user.countchildren %> >
                             </div>
                           </div>
+                        </div>
 
-                          <div class="col-12">
-                            <table class="table table-borderless table-sm align-middle">
-                              <tbody>
-                                <tr>
-                                  <td width="33%">Age of the child</td>
-                                  <td width="35%"><input type="text" name="age" id="childage" class="w-100 form-control text-center" placeholder="(in years)"></td>
-                                  <td width="33%">
-                                    <button type="button" class="w-100 btn btn-success" onclick='addage()'>
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 18">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                      </svg> Add age of another child
-                                    </button>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-      
-                          <div class="col-12">
-                              <label for="password" class="form-label">Any allergies the child/children might have?</label>
-                              <input type="text" name="allergy" id="allergy" class="form-control" placeholder="">
-                          </div>
-      
+                        <div class="col-12">
+                          <table class="table table-borderless table-sm align-middle text-center">
+                            <thead>
+                              <tr>
+                                <th scope="col">Name of the child</th>
+                                <th scope="col">Age of the child</th>
+                                <th scope="col">Any allergies?</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td width="25%"><input type="text" name="childname" id="childname" class="w-100 form-control text-center" placeholder= <%= user.childrenname %> ></td>
+                                <td width="25%"><input type="text" name="childage" id="childage" class="w-100 form-control text-center" placeholder= <%= user.childrenage %> ></td>
+                                <td width="25%"><input type="text" name="allergy" id="allergy" class="w-100 form-control text-center" placeholder= <%= user.childrenallergy %> ></td>
+                                <td width="25%">
+                                  <button type="button" class="w-100 btn btn-success" onclick='addage()'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 18">
+                                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                    </svg> Add age of another child
+                                  </button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
-            
-                      <hr class="my-4">
+                      <small>If there are no allergies, please type 'None'.</small>
+                      <br><br>
 
                       <div class="row">
                           <div class="col">
-                              <button class="w-100 btn btn-success btn-lg" type="button" onclick="location.href='/profile';">Save changes</button>
+                              <button class="w-100 btn btn-success btn-lg" type="submit">Save changes</button>
                           </div>
                           <div class="col">
                               <button type="button" class="w-100 btn btn-outline-success btn-lg" onclick="location.href='/dashboard';">Home page</button>
@@ -147,12 +150,12 @@
                       </div>
                     </form>
                   </div>
-              </div>
+                </div>
           </div>
       </div>
     </div>
 
-    <footer class="fixed-bottom text-center text-white" style="background-color: rgba(0, 0, 0, 0.816);">
+    <footer class="text-center text-white" style="background-color: rgba(0, 0, 0, 0.816);">
         <!-- Grid container -->
         <div class="container pt-4">
           <!-- Section: Social media -->
@@ -218,7 +221,7 @@
           }
 
           function addage() {
-            $("table").append("<tr><td>Age of the child</td><td><input type='text' name='age' id='childage' class='w-100 form-control text-center' placeholder='(in years)'></td><td><button type='button' class='w-100 btn btn-success' onclick='removeage()'><svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-x-circle-fill' viewBox='0 0 16 18'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z'/></svg> Remove age of a child</button></td></tr>");
+            $("table").append("<tr><td><input type='text' name='childname' id='childname' class='w-100 form-control text-center' placeholder='Name'></td><td><input type='text' name='childage' id='childage' class='w-100 form-control text-center' placeholder='(in years)'></td><td><input type='text' name='allergy' id='allergy' class='w-100 form-control text-center' placeholder='Allergy'></td><td><button type='button' class='w-100 btn btn-success' onclick='removeage()'><svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-x-circle-fill' viewBox='0 0 16 18'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z'/></svg> Remove age of a child</button></td></tr>");
           }
         </script>
     </body>
