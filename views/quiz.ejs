@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Picture Quiz</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
+        integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href=" https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body {
+            background-color: #eeeeee;
+            text-align: center;
+            background-color: #E6E6FA;
+            background: url('/images/quizbg6.webp') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .grid {
+            width: 68%;
+            height: 520px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 10px 50px 50px 50px;
+            border-radius: 50px;
+            border: 2px solid #cbcbcb;
+            box-shadow: 10px 15px 5px #cbcbcb;
+        }
+
+        .buttons img {
+            width: 200px;
+        }
+
+        .grid h1 {
+            font-family: "sans-serif";
+            background-color: #ffc107;
+            font-size: 35px;
+            text-align: center;
+            color: #ffffff;
+            padding: 2px 0px;
+            border-radius: 50px;
+        }
+
+        hr {
+            margin-top: 50px;
+            color: red;
+            background-color: #ffc107;
+            height: 2px;
+            border: none;
+        }
+
+        #score {
+            color: #ffc107;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .grid #question {
+            font-family: "monospace";
+            font-size: 30px;
+            color: #ffc107;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        #btn0,
+        #btn1,
+        #btn2,
+        #btn3 {
+
+            padding: 0px;
+            font-size: 20px;
+            color: #fff;
+            border: none;
+            margin: 10px 20px 10px 0px;
+
+        }
+
+        #btn0:hover,
+        #btn1:hover,
+        #btn2:hover,
+        #btn3:hover {
+            cursor: pointer;
+            background-color: #ffc107;
+        }
+
+        #btn0:focus,
+        #btn1:focus,
+        #btn2:focus,
+        #btn3:focus {
+            outline: 0;
+        }
+
+        #progress {
+            color: #2b2b2b;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div id="quiz">
+            <h1>Food Quiz</h1>
+            <hr style="margin-bottom: 20px">
+            <p id="question"></p>
+            <div class="buttons">
+                <button id="btn0"><span id="choice0"></span></button>
+                <button id="btn1"><span id="choice1"></span></button>
+                <button id="btn2"><span id="choice2"></span></button>
+                <button id="btn3"><span id="choice3"></span></button>
+            </div>
+            <hr style="margin-top: 50px">
+
+            <footer>
+                <p id="progress">Question x of y</p>
+            </footer>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var images = {
+            "Apple": "images/Fruits/apple.jpeg",
+            "Blueberry": "images/Fruits/blueberry.jpeg",
+            "Mango": "images/Fruits/mango.jpeg",
+            "Strawberry": "images/Fruits/strawberry.jpeg",
+            "Bellpepper": "images/Vegetables/bellpepper.jpeg",
+            "Broccoli": "images/Vegetables/broccoli.jpeg",
+            "Spinach": "images/Vegetables/spinach.jpeg",
+            "Tomato": "images/Vegetables/tomato.jpeg",
+            "Burger": "images/Snacks/burger.jpeg",
+            "Fries": "images/Snacks/fries.jpeg",
+            "Pasta": "images/Snacks/pasta.jpeg",
+            "Sandwich": "images/Snacks/sandwich.jpeg"
+
+        }
+        function populate() {
+            if (quiz.isEnded()) {
+                showScores();
+            } else {
+                // show question
+                var element = document.getElementById("question");
+                element.innerHTML = quiz.getQuestionIndex().text;
+
+                // show options
+                var choices = quiz.getQuestionIndex().choices;
+                for (var i = 0; i < choices.length; i++) {
+                    var element = document.getElementById("choice" + i);
+                    element.innerHTML = images[choices[i]] ? '<img src="' + images[choices[i]] + '"/>' : choices[i];
+                    guess("btn" + i, choices[i]);
+                }
+
+                showProgress();
+            }
+        };
+
+        function guess(id, guess) {
+            var button = document.getElementById(id);
+            button.onclick = function () {
+                quiz.guess(guess);
+                populate();
+            }
+        };
+
+        function showProgress() {
+            var currentQuestionNumber = quiz.questionIndex + 1;
+            var element = document.getElementById("progress");
+            element.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.questions.length;
+        };
+
+        function showScores() {
+            var gameOverHTML = "<h1>EatBits Preference Report</h1>";
+            gameOverHTML += "<h2 class='text-center'> Excellent you have completed the Game </h2>";
+            gameOverHTML += "<h3 id='score'> Your favoured ingredients: " + quiz.selected + "</h3>";
+            gameOverHTML += "  <a href='/foodReport' class='btn btn-success mx-auto'>View Your Report</a>"
+            // var favIngre = [];
+            // favIngre.push(quiz.selected.toString());
+            // favIngre.push(localStorage.getItem("fav"));
+            // localStorage.setItem("fav", favIngre);
+            // var obj = new Array(new player(localStorage.getItem("player"), quiz.selected));
+            var obj = new player(localStorage.getItem("player"), quiz.selected);
+
+            var array = [];
+            array.push(obj);
+            var temp = localStorage.getItem("playerInfo");
+            if (temp != "") {
+                parsedData = JSON.parse(localStorage.getItem("playerInfo"));
+                for (let i = 0; i < parsedData.length; i++) {
+                    tempPlayer = new player(parsedData[i].name, parsedData[i].result);
+                    array.push(tempPlayer);
+                }
+            }
+            localStorage.setItem("playerInfo", JSON.stringify(array));
+
+            //Object.keys(localStorage.getItem("playerInfo")).forEach((prop) => console.log(prop));
+
+            // var back = [];
+
+            // back = localStorage.getItem("playerInfo");
+            // back2 = JSON.parse(back);
+            // console.log(back2[0].name);
+
+            var element = document.getElementById("quiz");
+            element.innerHTML = gameOverHTML;
+        };
+
+        var selected = [];
+        // create questions
+        var questions = [
+            new Question("Select you favourite fruit", ["Apple", "Blueberry", "Mango", "Strawberry"]),
+            new Question("Select you favourite vegetable", ["Bellpepper", "Broccoli", "Spinach", "Tomato"]),
+            new Question("Select you favourite snack", ["Burger", "Fries", "Pasta", "Sandwich"])
+        ];
+
+        function Question(text, choices) {
+            this.text = text;
+            this.choices = choices;
+
+        }
+
+        var name;
+        var result;
+
+        function player(name, result) {
+            this.name = name;
+            this.result = result;
+            return this;
+        }
+
+        function setPlayerInfo(name, result) {
+            var info = [];
+
+
+        }
+
+        //  const selected = [];
+        Question.prototype.isCorrectAnswer = function (choice) {
+            console.log(choice);
+            selected.push(choice);
+            console.log(selected);
+            return choice;
+        }
+
+
+        function Quiz(questions) {
+            this.score = 0;
+            this.questions = questions;
+            this.questionIndex = 0;
+            this.selected = selected;
+        }
+
+        Quiz.prototype.getQuestionIndex = function () {
+            return this.questions[this.questionIndex];
+        }
+
+        Quiz.prototype.guess = function (answer) {
+            this.selected.push(answer);
+
+            this.questionIndex++;
+        }
+
+        Quiz.prototype.isEnded = function () {
+            return this.questionIndex === this.questions.length;
+        }
+
+        // create quiz
+        var quiz = new Quiz(questions);
+
+        // display quiz
+        populate();
+    </script>
+</body>
+
+</html>

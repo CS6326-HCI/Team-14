@@ -17,18 +17,18 @@
     <link rel="stylesheet"
         href=" https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-      <!-- JavaScript Bundle with Popper -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href = "/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 
 
 
@@ -38,7 +38,7 @@
 <body>
 
     <!--navBar start Here-->
-   
+
     <nav class="navbar navbar-expand-lg navbar-light static-top custom-navbar bg-dark text-white">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="/dashboard">
@@ -47,7 +47,7 @@
 
                 <b>EatBits</b>
 
-              </a>
+            </a>
             <button class="navbar-toggler" type="button" height="16" width="16" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -55,386 +55,419 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="ml-auto mr-auto col-lg-4 col-md-12 p-0">
-                  <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success text-white" type="submit" style="color:black">Search</button>
-                  </form>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success text-white" type="submit"
+                            style="color:black">Search</button>
+                    </form>
                 </div>
-  
-  
-               
+
+
+
             </div>
-  
+
             <div class="dropdown dropstart">
-              <a class="btn btn-secondary" href="#" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="bi bi-person-fill"></i>
-              </a>
-  
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Your Preference Reports</a></li>
-                  <li><a class="dropdown-item" href="#">Account Settings</a></li>
-                  <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                <a class="btn btn-secondary" href="#" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="bi bi-person-fill"></i>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Your Preference Reports</a></li>
+                    <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Sign Out</a></li>
                 </ul>
-              </div>
-  
-  
+            </div>
+
+
         </div>
     </nav>
-  
 
-      <!--sidemenu>-->
-      <div class="wrapper">
+
+    <!--sidemenu>-->
+    <div class="wrapper">
 
         <!-- Sidebar -->
         <div class="col-lg-2 col-md-3 px-sm-2 px-md-0 py-1 custom-navbar-sidemenu">
             <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
-              
-              <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
 
-                <li>
-                    <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-left " style="padding-top:40px">
-                       <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-search-heart-fill"></i> Recipes</span></i></a>
-                   
-                  </li>
-                
-                
-                <li>
-                  <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-left ">
-                     <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-file-bar-graph-fill"></i> Preference Report</span></a>
-                
-                </li>
-                <li>
-                  <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-left">
-                 <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>  Get Expert Advice</span>
-                  </a>
-                 
-                </li>
-              
-            
-              </ul>
+                <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
 
-            
-  
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-left "
+                            style="padding-top:40px">
+                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-search-heart-fill"></i>
+                                Recipes</span></i></a>
+
+                    </li>
+
+
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-left ">
+                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-file-bar-graph-fill"></i>
+                                Preference Report</span></a>
+
+                    </li>
+                    <li>
+                        <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i> Get
+                                Expert Advice</span>
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+
+
             </div>
 
             <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
-              
+
                 <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
-                  <li>
-                    <a href="#" class="nav-link align-start px-0" style="padding-top:40px">
-                       <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-egg-fill"></i> Food
-                        </span>
-                    </a>
-                  </li>
-                
-                  <li>
-                    <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-left ">
-                       <span class="ms-1 sidemenu-buttons side-menu "><i class="bi bi-bell-fill"></i> Quiz</span></i></a>
-                   
-                  </li>
-                  <li>
-                    <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
-                   <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-pin-map-fill"></i> Cuisine</span>
-                    </a>
-                   
-                  </li>
-                
-                 
-                 
+                    <li>
+                        <a href="#" class="nav-link align-start px-0" style="padding-top:40px">
+                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-egg-fill"></i> Food
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-left ">
+                            <span class="ms-1 sidemenu-buttons side-menu "><i class="bi bi-bell-fill"></i>
+                                Quiz</span></i></a>
+
+                    </li>
+                    <li>
+                        <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-pin-map-fill"></i>
+                                Cuisine</span>
+                        </a>
+
+                    </li>
+
+
+
                 </ul>
-  
-              
-    
-              </div>
 
 
-          </div>    
+
+            </div>
 
 
-    
+        </div>
+
+
+
         <!-- Page Content -->
         <div id="content" style="width: 91rem;">
             <div style="padding: 20px;">
                 <h1>
-        
+
                     Caramelised Apple Pasta <i class="bi bi-star-fill fa-xs" style="color:#FFD700;"></i><i
                         class="bi bi-star-fill fa-xs" style="color:#FFD700;"></i><i class="bi bi-star-fill fa-xs"
                         style="color:#FFD700;"></i><i class="bi bi-star-fill fa-xs" style="color:#FFD700;"></i><i
                         class="bi bi-star fa-xs"></i>
-                    <button class='btn btn-success float-end'>Review Me</button>
+                    <a href="/review" class='btn btn-success float-end'>Review Me</a>
                 </h1>
-        
-            </div>
-             
 
- 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6 p-3 border bg-light">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Video</h5>
-                        <iframe width="650" height="350" src="https://www.youtube.com/embed/Js1oHavCb2c"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
-
-                    </div>
-                </div>
             </div>
 
-            <div class="col-sm-6 p-3 border bg-light  overflow-auto">
-                <div class="card bg-light border-0" style="height: 8rem;">
-                    <div class="card-body border-0">
-                        <h5 class="card-title">Instructions</h5>
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Without Kids</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">With Kids</a>
-                            </li>
-                        </ul>
-                        <div style="font-size: 17px; font-family: Arial; padding: 10px;">
 
-                            Dice 4 medium yellow onions (about 4 1/2 cups). Peel, core, and finely dice 2 medium apples
-                            (about 3 cups). Mince or grate 4 garlic cloves (about 1 tablespoon). Finely chop the leaves
-                            from
-                            1 bunch fresh parsley until you have 1/2 cup. Finely grate 4 ounces Parmesan cheese (about 1
-                            cup).
 
-                            Heat 2 tablespoons olive oil in a large, heavy-bottomed pot such as a Dutch oven over
-                            medium-high heat until shimmering. Remove the casings from 12 ounces uncooked Italian
-                            sausage if
-                            needed, then add the sausage to the pot. Cook, breaking up the meat with a wooden spoon,
-                            until
-                            well-browned, 8 to 10 minutes. Using a slotted spoon, transfer the sausage to a bowl.
-                            Add 4 tablespoons unsalted butter to the pot. When melted, add the onions, apples, 1
-                            teaspoon
-                            dried thyme, 1/4 teaspoon red pepper flakes, 1 teaspoon kosher salt, and 1 teaspoon black
-                            pepper. Cook, stirring often to prevent the bottom from burning, until the onions are dark
-                            brown
-                            and the apples are very soft, 25 to 30 minutes. The onions should be the color of light
-                            mahogany
-                            wood. If the bottom of the pot starts to burn before the onions have fully caramelized, add
-                            2
-                            tablespoons of water to the pot, stir to help dissolve any burnt bits,<span
-                                id="dots">...</span><span id="more">and continue cooking.
-                                (Feel free to do this several times during cooking.)
-                                Meanwhile, bring a large pot of heavily salted water to a boil. Add 1 pound dried
-                                orecchiette
-                                pasta and cook 2 minutes less than al dente, about 8 minutes or according to package
-                                instructions. Reserve 1 cup of the cooking water. Drain the pasta and set aside.
-                                When the onions are ready, add the garlic and cook just until fragrant, 1 minute. Add 1
-                                cup
-                                dry
-                                white wine, scrape up any brown bits from the bottom of the pot, and cook until the wine
-                                is
-                                completely evaporated, 4 to 7 minutes.
-                                Add the pasta and 1/2 cup of the reserved pasta water. Cook until the water is
-                                completely
-                                absorbed by the pasta, 1 to 3 minutes. The pasta should look very glossy and saucy. If
-                                it
-                                looks
-                                dry, add more pasta water a tablespoon at a time as needed (you might not use all the
-                                remaining
-                                pasta water).
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 p-3 border bg-light">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Video</h5>
+                                <iframe width="650" height="350" src="https://www.youtube.com/embed/Js1oHavCb2c"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
 
-                                Remove the pot from the heat. Return the cooked sausage and any accumulated juices, half
-                                the
-                                parsley, and half the Parmesan to the pot and stir to combine. Serve immediately,
-                                garnishing
-                                each portion with the remaining parsley and Parmesan.
-
-                            </span>
+                            </div>
                         </div>
-                        <!-- <button onclick="myFunction()" id="myBtn">Read more</button> -->
+                    </div>
+
+                    <div class="col-sm-6 p-3 border bg-light  overflow-auto">
+                        <div class="card bg-light border-0" style="height: 8rem;">
+                            <div class="card-body border-0">
+                                <h5 class="card-title">Instructions</h5>
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Without Kids</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">With Kids</a>
+                                    </li>
+                                </ul>
+                                <div style="font-size: 17px; font-family: Arial; padding: 10px;">
+
+                                    Dice 4 medium yellow onions (about 4 1/2 cups). Peel, core, and finely dice 2 medium
+                                    apples
+                                    (about 3 cups). Mince or grate 4 garlic cloves (about 1 tablespoon). Finely chop the
+                                    leaves
+                                    from
+                                    1 bunch fresh parsley until you have 1/2 cup. Finely grate 4 ounces Parmesan cheese
+                                    (about 1
+                                    cup).
+
+                                    Heat 2 tablespoons olive oil in a large, heavy-bottomed pot such as a Dutch oven
+                                    over
+                                    medium-high heat until shimmering. Remove the casings from 12 ounces uncooked
+                                    Italian
+                                    sausage if
+                                    needed, then add the sausage to the pot. Cook, breaking up the meat with a wooden
+                                    spoon,
+                                    until
+                                    well-browned, 8 to 10 minutes. Using a slotted spoon, transfer the sausage to a
+                                    bowl.
+                                    Add 4 tablespoons unsalted butter to the pot. When melted, add the onions, apples, 1
+                                    teaspoon
+                                    dried thyme, 1/4 teaspoon red pepper flakes, 1 teaspoon kosher salt, and 1 teaspoon
+                                    black
+                                    pepper. Cook, stirring often to prevent the bottom from burning, until the onions
+                                    are dark
+                                    brown
+                                    and the apples are very soft, 25 to 30 minutes. The onions should be the color of
+                                    light
+                                    mahogany
+                                    wood. If the bottom of the pot starts to burn before the onions have fully
+                                    caramelized, add
+                                    2
+                                    tablespoons of water to the pot, stir to help dissolve any burnt bits,<span
+                                        id="dots">...</span><span id="more">and continue cooking.
+                                        (Feel free to do this several times during cooking.)
+                                        Meanwhile, bring a large pot of heavily salted water to a boil. Add 1 pound
+                                        dried
+                                        orecchiette
+                                        pasta and cook 2 minutes less than al dente, about 8 minutes or according to
+                                        package
+                                        instructions. Reserve 1 cup of the cooking water. Drain the pasta and set aside.
+                                        When the onions are ready, add the garlic and cook just until fragrant, 1
+                                        minute. Add 1
+                                        cup
+                                        dry
+                                        white wine, scrape up any brown bits from the bottom of the pot, and cook until
+                                        the wine
+                                        is
+                                        completely evaporated, 4 to 7 minutes.
+                                        Add the pasta and 1/2 cup of the reserved pasta water. Cook until the water is
+                                        completely
+                                        absorbed by the pasta, 1 to 3 minutes. The pasta should look very glossy and
+                                        saucy. If
+                                        it
+                                        looks
+                                        dry, add more pasta water a tablespoon at a time as needed (you might not use
+                                        all the
+                                        remaining
+                                        pasta water).
+
+                                        Remove the pot from the heat. Return the cooked sausage and any accumulated
+                                        juices, half
+                                        the
+                                        parsley, and half the Parmesan to the pot and stir to combine. Serve
+                                        immediately,
+                                        garnishing
+                                        each portion with the remaining parsley and Parmesan.
+
+                                    </span>
+                                </div>
+                                <!-- <button onclick="myFunction()" id="myBtn">Read more</button> -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <hr />
+
+
+            <div class="card-header">
+                <h4 style="padding: 10px;font-size: 40px;"> Kids Might Also Like</h4>
+
+
+                <div class="row">
+                    <div class="col">
+                        <img src="images/ImageR1.jpeg" class="card-img-top" alt="..." width="100" height="150"
+                            style="padding: 10px;" />
+                        <div class="card-footer text-muted border-0 text-center">
+                            Apple Pasta
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="images/imageR2.jpeg" class="card-img-top" alt="..." width="100" height="150"
+                            style="padding: 10px;" />
+                        <div class="card-footer text-muted border-0 text-center">
+                            Chicken Pasta
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="images/pasta2.jpeg" class="card-img-top" alt="..." width="100" height="150"
+                            style="padding: 10px;" />
+                        <div class="card-footer text-muted border-0 text-center">
+                            Shrimp Pasta
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="images/OnionPasta.jpeg" class="card-img-top" alt="..." width="100" height="150"
+                            style="padding: 10px;" />
+                        <div class="card-footer text-muted border-0 text-center">
+                            Ravioli Pasta
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="images/pasta4.jpeg" class="card-img-top" alt="..." width="100" height="150"
+                            style="padding: 10px;" />
+                        <div class="card-footer text-muted border-0 text-center">
+                            Alfredo Pasta
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <section>
+                <div class="container justify-content-center" style="width: 91rem;">
+                    <div class="row d-flex">
+                        <div class="col-md-4">
+                            <div class="card text-dark" style="width: 70rem;">
+                                <div class="card-body p-4">
+                                    <h4 class="mb-0">Recent comments</h4>
+                                    <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
+
+                                    <div class="d-flex flex-start">
+                                        <img class="rounded-circle shadow-1-strong me-3"
+                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp"
+                                            alt="avatar" width="60" height="60" />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">Maggie Marsh</h6>
+                                            <div class="d-flex align-items-center mb-3">
+                                                <p class="mb-0">
+                                                    March 07, 2021
+                                                    <!-- <span class="badge bg-primary">Pending</span> -->
+                                                </p>
+                                            </div>
+                                            <p class="mb-0">
+                                                This recipe has so many delicious flavors! The caramelized onions give
+                                                such an umami flavor to the dish. And the apples add a hint of sweetness
+                                                but go really well with the onions and sage. My family said it tasted
+                                                like a restaurant quality dish! I highly recommend!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="my-0" />
+
+                                <div class="card-body p-4">
+                                    <div class="d-flex flex-start">
+                                        <img class="rounded-circle shadow-1-strong me-3"
+                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(26).webp"
+                                            alt="avatar" width="60" height="60" />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">Lara Stewart</h6>
+                                            <div class="d-flex align-items-center mb-3">
+                                                <p class="mb-0">
+                                                    March 15, 2021
+
+                                                </p>
+                                            </div>
+                                            <p class="mb-0">
+                                                This is a great topic for us to learn and help. After the Covid-19
+                                                pandemic, people have become more conscious about their diet and
+                                                immunity. They have shifted towards fresh & healthy food habits. Hence
+                                                the demand for home food service has increased.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="my-0" style="height: 1px;" />
+
+                                <div class="card-body p-4">
+                                    <div class="d-flex flex-start">
+                                        <img class="rounded-circle shadow-1-strong me-3"
+                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(33).webp"
+                                            alt="avatar" width="60" height="60" />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">Alexa Bennett</h6>
+                                            <div class="d-flex align-items-center mb-3">
+                                                <p class="mb-0">
+                                                    March 24, 2021
+
+                                                </p>
+                                            </div>
+                                            <p class="mb-0">
+                                                Woowww, Very nice.. REally liked it.. Can it be done in other way?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="my-0" />
+
+                                <div class="card-body p-4">
+                                    <div class="d-flex flex-start">
+                                        <img class="rounded-circle shadow-1-strong me-3"
+                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(24).webp"
+                                            alt="avatar" width="60" height="60" />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">Betty Walker</h6>
+                                            <div class="d-flex align-items-center mb-3">
+                                                <p class="mb-0">
+                                                    March 30, 2021
+
+                                                </p>
+                                            </div>
+                                            <p class="mb-0">
+                                                Thank you so much! That means a lot coming from you, a chef! Best, Betty
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <script>
+                function myFunction() {
+                    var dots = document.getElementById("dots");
+                    var moreText = document.getElementById("more");
+                    var btnText = document.getElementById("myBtn");
+
+                    if (dots.style.display === "none") {
+                        dots.style.display = "inline";
+                        btnText.innerHTML = "Read more";
+                        moreText.style.display = "none";
+                    } else {
+                        dots.style.display = "none";
+                        btnText.innerHTML = "Read less";
+                        moreText.style.display = "inline";
+                    }
+                }
+            </script>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+
+
+
         </div>
+
     </div>
-    <hr />
-
-
-    <div class="card-header">
-        <h4 style="padding: 10px;font-size: 40px;"> Kids Might Also Like</h4>
-
-
-        <div class="row">
-            <div class="col">
-                <img src="images/ImageR1.jpeg" class="card-img-top" alt="..." width="100" height="150"
-                    style="padding: 10px;" />
-                <div class="card-footer text-muted border-0 text-center">
-                    Apple Pasta
-                </div>
-            </div>
-            <div class="col">
-                <img src="images/imageR2.jpeg" class="card-img-top" alt="..." width="100" height="150"
-                    style="padding: 10px;" />
-                <div class="card-footer text-muted border-0 text-center">
-                    Chicken Pasta
-                </div>
-            </div>
-            <div class="col">
-                <img src="images/pasta2.jpeg" class="card-img-top" alt="..." width="100" height="150"
-                    style="padding: 10px;" />
-                <div class="card-footer text-muted border-0 text-center">
-                    Shrimp Pasta
-                </div>
-            </div>
-            <div class="col">
-                <img src="images/OnionPasta.jpeg" class="card-img-top" alt="..." width="100" height="150"
-                    style="padding: 10px;" />
-                <div class="card-footer text-muted border-0 text-center">
-                    Ravioli Pasta
-                </div>
-            </div>
-            <div class="col">
-                <img src="images/pasta4.jpeg" class="card-img-top" alt="..." width="100" height="150"
-                    style="padding: 10px;" />
-                <div class="card-footer text-muted border-0 text-center">
-                    Alfredo Pasta
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <hr />
-
-    <section>
-        <div class="container justify-content-center"  style="width: 91rem;">
-            <div class="row d-flex">
-                <div class="col-md-4">
-                    <div class="card text-dark" style="width: 70rem;">
-                        <div class="card-body p-4">
-                            <h4 class="mb-0">Recent comments</h4>
-                            <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
-
-                            <div class="d-flex flex-start">
-                                <img class="rounded-circle shadow-1-strong me-3"
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar"
-                                    width="60" height="60" />
-                                <div>
-                                    <h6 class="fw-bold mb-1">Maggie Marsh</h6>
-                                    <div class="d-flex align-items-center mb-3">
-                                        <p class="mb-0">
-                                            March 07, 2021
-                                            <!-- <span class="badge bg-primary">Pending</span> -->
-                                        </p>
-                                    </div>
-                                    <p class="mb-0">
-                                        This recipe has so many delicious flavors! The caramelized onions give such an umami flavor to the dish. And the apples add a hint of sweetness but go really well with the onions and sage. My family said it tasted like a restaurant quality dish! I highly recommend!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <hr class="my-0" />
-
-                        <div class="card-body p-4">
-                            <div class="d-flex flex-start">
-                                <img class="rounded-circle shadow-1-strong me-3"
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(26).webp" alt="avatar"
-                                    width="60" height="60" />
-                                <div>
-                                    <h6 class="fw-bold mb-1">Lara Stewart</h6>
-                                    <div class="d-flex align-items-center mb-3">
-                                        <p class="mb-0">
-                                            March 15, 2021
-
-                                        </p>
-                                    </div>
-                                    <p class="mb-0">
-                                        This is a great topic for us to learn and help. After the Covid-19 pandemic, people have become more conscious about their diet and immunity. They have shifted towards fresh & healthy food habits. Hence the demand for home food service has increased.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <hr class="my-0" style="height: 1px;" />
-
-                        <div class="card-body p-4">
-                            <div class="d-flex flex-start">
-                                <img class="rounded-circle shadow-1-strong me-3"
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(33).webp" alt="avatar"
-                                    width="60" height="60" />
-                                <div>
-                                    <h6 class="fw-bold mb-1">Alexa Bennett</h6>
-                                    <div class="d-flex align-items-center mb-3">
-                                        <p class="mb-0">
-                                            March 24, 2021
-
-                                        </p>
-                                    </div>
-                                    <p class="mb-0">
-                                        Woowww, Very nice.. REally liked it.. Can it be done in other way?
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <hr class="my-0" />
-
-                        <div class="card-body p-4">
-                            <div class="d-flex flex-start">
-                                <img class="rounded-circle shadow-1-strong me-3"
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(24).webp" alt="avatar"
-                                    width="60" height="60" />
-                                <div>
-                                    <h6 class="fw-bold mb-1">Betty Walker</h6>
-                                    <div class="d-flex align-items-center mb-3">
-                                        <p class="mb-0">
-                                            March 30, 2021
-
-                                        </p>
-                                    </div>
-                                    <p class="mb-0">
-                                        Thank you so much! That means a lot coming from you, a chef! Best, Betty
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 
-    <script>
-        function myFunction() {
-            var dots = document.getElementById("dots");
-            var moreText = document.getElementById("more");
-            var btnText = document.getElementById("myBtn");
-
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Read more";
-                moreText.style.display = "none";
-            } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Read less";
-                moreText.style.display = "inline";
-            }
-        }
-    </script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
-        
-
-        </div>
-      
-    </div>   
-    
-      
-  
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -444,60 +477,40 @@
     -->
 
     <!--footer-->
-<footer class="text-center text-white" style="background-color: rgba(14, 13, 13, 0.811);">
-    <!-- Grid container -->
-    <div class="container pt-4">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Twitter -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-light m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="light"
-          ><i class="bi bi-twitter"></i></a>
-    
-        <!-- Google -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-light m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="light"
-          ><i class="bi bi-google"></i></a>
-    
-        <!-- Instagram -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-light m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="light"
-          ><i class="bi bi-instagram"></i></a>
-    
-        <!-- Linkedin -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-light m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="light"
-          ><i class="bi bi-linkedin"></i></a>
-        <!-- Github -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-light m-1"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="light"
-          ><i class="bi bi-github"></i></a>
-      </section>
-      <!-- Section: Social media -->
-    </div>
-    <!-- Grid container -->
-    
-    <!-- Copyright -->
-    <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2022 Copyright:
-      <a class="text-light" href="https://mdbootstrap.com/">Team-14EatBits.com</a>
-    </div>
-    <!-- Copyright -->
+    <footer class="text-center text-white" style="background-color: rgba(14, 13, 13, 0.811);">
+        <!-- Grid container -->
+        <div class="container pt-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Twitter -->
+                <a class="btn btn-link btn-floating btn-lg text-light m-1" href="#!" role="button"
+                    data-mdb-ripple-color="light"><i class="bi bi-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-link btn-floating btn-lg text-light m-1" href="#!" role="button"
+                    data-mdb-ripple-color="light"><i class="bi bi-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-link btn-floating btn-lg text-light m-1" href="#!" role="button"
+                    data-mdb-ripple-color="light"><i class="bi bi-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-link btn-floating btn-lg text-light m-1" href="#!" role="button"
+                    data-mdb-ripple-color="light"><i class="bi bi-linkedin"></i></a>
+                <!-- Github -->
+                <a class="btn btn-link btn-floating btn-lg text-light m-1" href="#!" role="button"
+                    data-mdb-ripple-color="light"><i class="bi bi-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-light" href="https://mdbootstrap.com/">Team-14EatBits.com</a>
+        </div>
+        <!-- Copyright -->
     </footer>
 </body>
 

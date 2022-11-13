@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Catch Them All</title>
+    <style>
+        canvas {
+
+            background-color: white;
+        }
+
+        body {
+            text-align: center;
+            background-color: #E6E6FA;
+            background: url('/images/gamebg2.webp') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        h1 {
+            font-family: Verdana;
+        }
+
+        div {
+            font-size: 10px;
+            font-family: Verdana;
+        }
+
+        .myButtonE {
+            background-color: #44c767;
+            -moz-border-radius: 28px;
+            -webkit-border-radius: 28px;
+            border-radius: 28px;
+            border: 1px solid #18ab29;
+            display: none;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Verdana;
+            font-size: 17px;
+            padding: 16px 31px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #2f6627;
+        }
+
+        .myButtonE:hover {
+            background-color: #5cbf2a;
+        }
+
+        .myButtonE:active {
+            position: relative;
+            top: 1px;
+        }
+
+        .myButtonH {
+            background-color: #f02424;
+            -moz-border-radius: 28px;
+            -webkit-border-radius: 28px;
+            border-radius: 28px;
+            border: 1px solid #94351e;
+            display: none;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Verdana;
+            font-size: 17px;
+            padding: 16px 31px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #662828;
+        }
+
+        .myButtonH:hover {
+            background-color: #cc3a21;
+        }
+
+        .myButtonH:active {
+            position: relative;
+            top: 1px;
+        }
+
+        .myButtonR {
+            background-color: #a245c7;
+            -moz-border-radius: 28px;
+            -webkit-border-radius: 28px;
+            border-radius: 28px;
+            border: 1px solid #9319ab;
+            display: none;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 17px;
+            padding: 16px 31px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #5e2866;
+        }
+
+        .myButtonR:hover {
+            background-color: #a92abd;
+        }
+
+        .myButtonR:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Catch My Favourites</h1>
+
+
+
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <h2>
+        <!-- <button class="myButtonE" onClick="drawEasy()">EASY</button> -->
+
+        <button class="myButtonH" onClick="drawHard()">Start Game</button>
+    </h2>
+    <h2><button class="myButtonR" onClick="replay()">PLAY AGAIN!</button>
+        <a class="myButtonR" href="/foodReport">GET YOUR REPORT</a>
+        <img id="candy" src="images/img/pasta.png" style="display:none">
+        <img id="tomato" src="images/img/tomato.png" style="display:none">
+        <img id="pasta" src="images/img/cotton.png" style="display:none">
+        <img id="veggie" src="images/img/veggie.png" style="display:none">
+        <img id="apple" src="images/img/apple.png" style="display:none">
+        <img id="cherry" src="images/img/cherry.png" style="display:none">
+        <img id="cheese" src="images/img/cheese.png" style="display:none">
+        <img id="bag" src="images/img/bag.png" style="display:none">
+        <img id="background" src="images/img/bkg.jpg" style="display:none">
+
+        <script type="text/javascript" src="javascripts/jquery.js"></script>
+        <script src="javascripts/script.js"></script>
+</body>
+
+
+</html>
