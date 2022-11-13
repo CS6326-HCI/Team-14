@@ -52,7 +52,7 @@
 
              
           </div>
-
+          <span style="padding-right: 1%; padding-top: 0.5%;"><h5> <%= user.firstname %> </h5></span>
           <div class="dropdown dropstart">
             <a class="btn btn-secondary" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-person-fill"></i>
@@ -144,7 +144,7 @@
         <!-- We'll fill this with dummy content -->
      
       <div class="menu py-5 bg-light p-5">
-        <h4 class="text-center">Hello Srija, Pave your way into our Culinary world!!</h4>
+        <h4 class="text-center">Hello <%= user.firstname %> , Pave your way into our Culinary world!!</h4>
         <h2>Dashboard</h2><br>
           <div class="container-fluid">
               <div class="row row-cols-1 row-cols-md-3 g-5 justify-content-center">
