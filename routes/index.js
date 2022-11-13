@@ -80,6 +80,30 @@ router.post('/register', function (req, res) {
   res.redirect('/profile');
 });
 
+router.get('/quiz', function (req, res) {
+  res.render('quiz');
+
+});
+
+router.get('/activities', function (req, res) {
+  res.render('activities');
+
+});
+
+
+router.get('/foodReport', function (req, res) {
+  res.render('foodReport');
+
+});
+
+router.get('/review', function (req, res) {
+  res.render('review');
+});
+
+router.get('/game', function (req, res) {
+  res.render('game');
+});
+
 
 // Profile page
 router.get('/profile', function (req, res) {
