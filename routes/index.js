@@ -7,24 +7,6 @@ const account = require('../account.json')
 var loginerror = ""
 var currentprofile;
 
-// let newuser = { 
-//   "username": "chad@gmail.com", 
-//   "password": "tatumchad",
-//   "firstname":"chad",
-//   "lastname":"tatum",
-//   "countchildren": 2,
-//   "childrenname": ["Bella","Max"],
-//   "childrenage":[ 2, 4],
-//   "childrenallergy":["None","None"]
-// }
-// account.push(newuser);
-// fs.writeFile("account.json", JSON.stringify(account), err => {
-     
-//   // Checking for errors
-//   if (err) throw err;  
-// });
-// console.log(account);
-
 // Home or Lnading page
 router.get('/', function (req, res, next) {
   res.render('index', {loginmessage: loginerror});
