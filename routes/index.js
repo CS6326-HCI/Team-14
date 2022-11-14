@@ -127,4 +127,10 @@ router.get('/review', function (req, res) {
   res.render('review', {user: currentprofile});
 });
 
+//search Page
+router.get('/search', function (req, res) {
+  res.render('search', {user: currentprofile});
+
+});
+
 module.exports = router;
