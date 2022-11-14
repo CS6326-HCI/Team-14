@@ -32,11 +32,20 @@
 
     <script>
 
+
+
+
         function store() {
-            if (document.getElementById("playerName").value === "")
-                alert("Please enter your Name and Click Save")
-            localStorage.setItem("player", document.getElementById("playerName").value);
+            var name = document.getElementById("playerName").value;
+            if (name === "")
+                alert("Please enter your Name and Click Save");
+            localStorage.setItem("player", name);
+            document.getElementById("playerName").placeholder = name;
+            event.preventDefault();
         }
+
+
+
     </script>
 
 
@@ -70,9 +79,12 @@
                 </div>
 
 
-
             </div>
-            <span style="padding-right: 1%; padding-top: 0.5%;"><h5> <%= user.firstname %> </h5></span>
+            <span style="padding-right: 1%; padding-top: 0.5%;">
+                <h5>
+                    <%= user.firstname %>
+                </h5>
+            </span>
             <div class="dropdown dropstart">
                 <a class="btn btn-secondary" href="#" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                     aria-expanded="false">
@@ -170,10 +182,9 @@
         <!-- Page Content -->
         <div id="content" class="mx-auto" style="margin-top:120px;margin-bottom: 30px;">
             <h2> Enter your Name & Select the game you would like to play !!</h2>
-            <form class="d-flex">
-                <input id="playerName" class="form-control me-2 border-bottom " type="search" placeholder="Enter Name"
-                    aria-label="Search">
-                <button class="btn btn-outline-success " type="submit" onclick="store()">Save</button>
+            <form class="d-flex" onsubmit="store()">
+                <input id="playerName" class="form-control me-2 border-bottom " placeholder="Enter Name">
+                <button class="btn btn-outline-success " type="submit">Save</button>
             </form>
             <br>
 
@@ -186,9 +197,9 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">Food Quiz</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <p class="card-text">Food Quiz allows you to learn about the your kids Favoured ingredients
+                                for this week. Enter your name and hit save before you start the quiz.</p>
+
                         </div>
                     </div>
                 </div>
@@ -202,9 +213,10 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">Catch Them</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <p class="card-text">Catch them all allows you to learn about the your kids Favoured
+                                ingredients
+                                for this week. Enter your name and hit save before you start the game.</p>
+
                         </div>
                     </div>
                 </div>
@@ -215,6 +227,11 @@
     </div>
 
 
+    <br>
+    <br>
+
+    <br>
+    <br>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

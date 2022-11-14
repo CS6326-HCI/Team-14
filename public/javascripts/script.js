@@ -340,6 +340,7 @@ function gameOver() {
 	context.fillStyle = 'red';
 	context.fillText('GAME OVER', x, 200);
 	context.fillStyle = 'black';
+	context.font = "15px Verdana";
 	context.fillText('Favoured Ingredients: ' + newArr, x, 300);
 	$('.myButtonR').css('display', 'inline-block');
 
