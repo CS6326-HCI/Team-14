@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var passport = require('passport');
 const fs = require("fs");
 
 const account = require('../account.json')
