@@ -118,7 +118,7 @@ a, a:hover, a:focus {
   display: block;
 }
 #sidebar ul li a:hover {
-  color: black;
+  
   background: #fff;
 }
 
@@ -156,9 +156,6 @@ ul ul a {
 
 
 
-.side-menu:hover {
-  color:rgb(35, 34, 34);
-}
 
 .side-menu{
   color:white;

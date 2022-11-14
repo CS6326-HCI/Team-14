@@ -48,10 +48,14 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success text-white" type="submit" style="color:black">Search</button>
           </form>
-        </div>   
+        </div>
       </div>
-          
-      <span style="padding-right: 1%; padding-top: 0.5%;"><h5> <%= user.firstname %> </h5></span>
+
+      <span style="padding-right: 1%; padding-top: 0.5%;">
+        <h5>
+          <%= user.firstname %>
+        </h5>
+      </span>
       <div class="dropdown dropstart">
         <a class="btn btn-secondary" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
           aria-expanded="false">
@@ -179,7 +183,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Search Recipes</h5>
                   <p class="card-text">Get to know different recipes using specific ingredients.</p>
-                  <a href="/recipe" class="btn btn-success">GO!</a>
+                  <a href="/search" class="btn btn-success">GO!</a>
                 </div>
               </div>
             </div>
