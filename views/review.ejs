@@ -323,13 +323,14 @@
 
                         <!-- Message input -->
                         <div class="form-outline mb-4">
-                            <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                            <textarea class="form-control" id="comments" rows="4"></textarea>
                             <label class="form-label" for="form4Example3">Type Your Comments</label>
                         </div>
                         <div class="text-end">
 
                             <button type="button" class="btn text-white justify-content-center" data-bs-toggle="modal"
-                                data-bs-target="#LoginModal" style="background-color: #08818d;">
+                                data-bs-target="#LoginModal" style="background-color: #08818d;"
+                                onclick="storeComments()">
                                 Submit
                             </button>
 
@@ -351,8 +352,8 @@
                                         <div class="modal-body p-5 pt-0">
                                             <form class="LogInForm" action="/" method="POST">
 
-                                                <a class="w-100 mb-2 btn btn-lg rounded-3 text-white" style="background-color: #08818d;"
-                                                    href="/dashboard">Go back Home</a>
+                                                <a id="backId" class="w-100 mb-2 btn btn-lg rounded-3 text-white"
+                                                    style="background-color: #08818d;">Go back to Recipe</a>
 
                                             </form>
                                         </div>
@@ -376,7 +377,12 @@
 
     <script>
         function storeComments() {
-            localStorage.setItem("comments", document.getElementById("comments").value)
+            localStorage.setItem("comments", document.getElementById("comments").value);
+            var a = document.getElementById('backId'); //or grab it by tagname etc
+            var id = localStorage.getItem("recipeId");
+            var str = "/recipe/" + id;
+            console.log(str);
+            a.href = str;
         }
     </script>
 
