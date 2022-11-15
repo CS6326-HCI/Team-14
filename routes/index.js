@@ -12,8 +12,9 @@ var withKids;
 var withoutKids;
 var ingredients;
 
-// Home or Lnading page
+// Home or Landing page
 router.get('/', function (req, res, next) {
+  currentprofile = undefined;
   res.render('index', { loginmessage: loginerror });
 });
 
