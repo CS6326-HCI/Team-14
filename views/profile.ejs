@@ -167,7 +167,7 @@
           <br>
 
       </div>
-      
+
       <!-- Page Content -->
       <div id="content">
           <div class="container-fluid" style="padding-left: 18%; padding-right: 8%;">
@@ -211,7 +211,7 @@
                                 <td width="25%"><input type="text" name="childage" id="childage" class="w-100 form-control text-center" placeholder= <%= user.childrenage %> ></td>
                                 <td width="25%"><input type="text" name="allergy" id="allergy" class="w-100 form-control text-center" placeholder= <%= user.childrenallergy %> ></td>
                                 <td width="25%">
-                                  <button type="button" class="w-100 btn btn-success" onclick='addage()'>
+                                  <button type="button" class="w-100 btn text-white" style="background-color: #08818d;"  onclick='addage()'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 18">
                                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
                                     </svg> Add age of another child
@@ -227,10 +227,10 @@
 
                       <div class="row">
                           <div class="col">
-                              <button class="w-100 btn btn-success btn-lg" type="submit">Save changes</button>
+                              <button class="w-100 btn btn-lg text-white" style="background-color: #08818d;"  type="submit">Save changes</button>
                           </div>
                           <div class="col">
-                              <button type="button" class="w-100 btn btn-outline-success btn-lg" onclick="location.href='/dashboard';">Home page</button>
+                              <button type="button" class="w-100 btn btn-lg text-white" style="background-color: #08818d;"  onclick="location.href='/dashboard';">Home page</button>
                           </div>
                           <hr class="my-4">
                       </div>
@@ -307,7 +307,7 @@
           }
 
           function addage() {
-            $("table").append("<tr><td><input type='text' name='childname' id='childname' class='w-100 form-control text-center' placeholder='Name'></td><td><input type='text' name='childage' id='childage' class='w-100 form-control text-center' placeholder='(in years)'></td><td><input type='text' name='allergy' id='allergy' class='w-100 form-control text-center' placeholder='Allergy'></td><td><button type='button' class='w-100 btn btn-success' onclick='removeage()'><svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-x-circle-fill' viewBox='0 0 16 18'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z'/></svg> Remove age of a child</button></td></tr>");
+            $("table").append("<tr><td><input type='text' name='childname' id='childname' class='w-100 form-control text-center' placeholder='Name'></td><td><input type='text' name='childage' id='childage' class='w-100 form-control text-center' placeholder='(in years)'></td><td><input type='text' name='allergy' id='allergy' class='w-100 form-control text-center' placeholder='Allergy'></td><td><button type='button' class='w-100 btn text-white' style='background-color: #08818d;' onclick='removeage()'><svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-x-circle-fill' viewBox='0 0 16 18'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z'/></svg> Remove age of a child</button></td></tr>");
           }
         </script>
     </body>

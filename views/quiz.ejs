@@ -195,7 +195,7 @@
             var gameOverHTML = "<h1>EatBits Preference Report</h1>";
             gameOverHTML += "<h2 class='text-center'> Excellent you have completed the Quiz </h2><br>";
             gameOverHTML += "<h3 id='score'> Your favoured ingredients: " + quiz.selected + "</h3><br>";
-            gameOverHTML += "  <a href='/foodReport' class='btn btn-success mx-auto btn-lg'>View Your Report</a>"
+            gameOverHTML += "  <a href='/foodReport' class='btn text-white mx-auto btn-lg' style='background-color: #08818d;'>View Your Report</a>"
 
             var obj = new player(localStorage.getItem("player"), quiz.selected);
             var array = [];
