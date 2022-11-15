@@ -32,40 +32,40 @@
   <!--NavBar-->
   <nav class="navbar navbar-expand-lg custom-navbar text-white" style="background-color: rgba(0, 0, 0, 0.816);">
     <div class="container-fluid">
-        <a class="navbar-brand text-white" href="/dashboard">
+      <a class="navbar-brand text-white" href="/dashboard">
 
-            <img src="/images/icon.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        <img src="/images/icon.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
 
-            <b>EatBits</b>
+        <b>EatBits</b>
 
+      </a>
+      <button class="navbar-toggler" type="button" height="16" width="16" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <span style="padding-left: 85%; padding-top: 0.5%;">
+        <h5>
+          <%= user.firstname %>
+        </h5>
+      </span>
+      <div class="dropdown dropstart">
+        <a class="btn btn-secondary" href="#" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="bi bi-person-fill"></i>
         </a>
-        <button class="navbar-toggler" type="button" height="16" width="16" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <span style="padding-left: 85%; padding-top: 0.5%;">
-            <h5>
-                <%= user.firstname %>
-            </h5>
-        </span>
-        <div class="dropdown dropstart">
-            <a class="btn btn-secondary" href="#" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <i class="bi bi-person-fill"></i>
-            </a>
-
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Your Preference Reports</a></li>
-                <li><a class="dropdown-item" href="#">Account Settings</a></li>
-                <li><a class="dropdown-item" href="#">Sign Out</a></li>
-            </ul>
-        </div>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="#">Your Preference Reports</a></li>
+          <li><a class="dropdown-item" href="#">Account Settings</a></li>
+          <li><a class="dropdown-item" href="#">Sign Out</a></li>
+        </ul>
+      </div>
 
 
     </div>
-</nav>
+  </nav>
 
   <!--SearchBar-->
 
@@ -74,141 +74,140 @@
 
     <!-- Sidebar -->
     <div class="col-lg-2 col-md-3 px-sm-2  custom-navbar-sidemenu" style="height: 850px;">
-        <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
-            <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
+      <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
+        <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
 
-                <li>
-                    <a href="/search" class="nav-link align-start px-0" style="padding-top:40px">
+          <li>
+            <a href="/search" class="nav-link align-start px-0" style="padding-top:40px">
 
-                        <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-search-heart-fill"></i>
-                            Recipes
+              <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-search-heart-fill"></i>
+                Recipes
 
-                        </span>
+              </span>
 
-                    </a>
+            </a>
 
-                </li>
+          </li>
 
 
-                <li>
+          <li>
 
-                    <a href="/foodReport" class="nav-link px-0 align-left">
+            <a href="/foodReport" class="nav-link px-0 align-left">
 
-                        <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>Food
-                            Preference Reports</span>
+              <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>Food
+                Preference Reports</span>
 
-                    </a>
+            </a>
 
 
-                </li>
+          </li>
 
 
 
-                <li>
+          <li>
 
-                    <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+            <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
 
-                        <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>Expert
-                            Advice</span>
+              <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>Expert
+                Advice</span>
 
-                    </a>
+            </a>
 
 
-                </li>
+          </li>
 
-            </ul>
+        </ul>
 
 
 
-        </div>
+      </div>
 
-        <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
+      <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
 
-            <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
+        <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
 
-                <li>
-                    <a href="#" class="nav-link align-start px-0" style="padding-top:40px">
+          <li>
+            <a href="#" class="nav-link align-start px-0" style="padding-top:40px">
 
-                        <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-egg-fill"></i> Food
+              <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-egg-fill"></i> Food
 
-                        </span>
+              </span>
 
-                    </a>
+            </a>
 
-                </li>
+          </li>
 
 
 
-                <li>
+          <li>
 
-                    <a href="/activities" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+            <a href="/activities" class="nav-link px-0 align-left">
 
-                        <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-bell-fill"></i>Quiz</span>
+              <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-bell-fill"></i>Quiz</span>
 
-                    </a>
+            </a>
 
 
-                </li>
-                <li>
+          </li>
+          <li>
 
-                    <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+            <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
 
-                        <span class="ms-1 sidemenu-buttons side-menu"><i
-                                class="bi bi-pin-map-fill"></i>Cuisine</span>
+              <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-pin-map-fill"></i>Cuisine</span>
 
-                    </a>
+            </a>
 
 
-                </li>
+          </li>
 
-            </ul>
+        </ul>
 
 
-        </div>
+      </div>
 
 
-        <!--Extra profile Options-->
+      <!--Extra profile Options-->
 
 
 
-        <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
+      <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
 
 
 
-            <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
+        <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
 
-                <li>
+          <li>
 
-                    <a href="/profile" class="nav-link align-start px-0" style="padding-top:40px">
+            <a href="/profile" class="nav-link align-start px-0" style="padding-top:40px">
 
-                        <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-gear"></i>Profile
+              <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-gear"></i>Profile
 
-                        </span>
+              </span>
 
-                    </a>
+            </a>
 
-                </li>
+          </li>
 
 
 
-                <li>
+          <li>
 
-                    <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+            <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
 
-                        <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-person"></i> Sign Out</span>
+              <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-person"></i> Sign Out</span>
 
-                    </a>
+            </a>
 
 
-                </li>
+          </li>
 
-            </ul>
+        </ul>
 
 
-        </div>
+      </div>
 
-        <br>
-        <br>
+      <br>
+      <br>
 
     </div>
 
@@ -222,24 +221,29 @@
         <div class="searchWrapper">
           <form class="form-inline">
 
-            <div class="form-group mx-sm-3 mb-2" id="search-books">
+            <div class="form-group mx-sm-3 mb-3" id="search-books">
               <label for="search" class="sr-only">Search Recipes</label>
-              <input type="text" name="search" id="search">
+              <!-- <input type="text" name="search" > -->
+              <input type="text" id="search" class="form-control" placeholder="Enter you ingredients"
+                aria-label="Recipient's username with two button addons">
             </div>
-            <button name="search_btn" id="searchSubmit" type="submit" class="btn btn-primary mb-2">Search</button>
+            <button name="search_btn" id="searchSubmit" type="submit" class="btn btn-primary mb-3">Search</button>
             &nbsp;
 
 
-            <button name="reset" type="reset" id="reset" class="btn btn-primary mb-2">Reset</button>
+            <button name="reset" type="reset" id="reset" class="btn btn-primary mb-3">Reset</button>
+            <br>
+
           </form>
+          <div>
+            <label for="sorting" id="sortingLabel">Sort By:</label>
 
-          <label for="sorting" id="sortingLabel">Sort By:</label>
-
-          <select id="sorting" onchange="sortingResults({filteredList});">
-            <option value="Alphabetically">Alphabetically</option>
-            <option value="Rating">User Ratings</option>
-            <option value="CookingTime">Cooking Time</option>
-          </select>
+            <select id="sorting" onchange="sortingResults({filteredList});">
+              <option value="Alphabetically">Alphabetically</option>
+              <option value="Rating">User Ratings</option>
+              <option value="CookingTime">Cooking Time</option>
+            </select>
+          </div>
         </div>
       </div>
 
