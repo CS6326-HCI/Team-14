@@ -92,6 +92,8 @@ function init() {
 	context.fillText('collect the veggies, fruits and snacks!', x, 244);
 	context.fillText('Use the arrow keys to move the bag.', x, 276);
 	context.fillText('Click anywhere inside the box to start.', x, 320);
+	context.fillStyle = 'red';
+	context.fillText('You lose lives if you catch the candy', x, 360);
 	canvas.addEventListener('mousedown', chooseDifficulty, false);
 	candySprite = document.getElementById('candy');
 	appleSprite = document.getElementById('apple');
@@ -112,10 +114,12 @@ function chooseDifficulty() {
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	$('.myButtonE').css('display', 'inline-block');
 	$('.myButtonH').css('display', 'inline-block');
-	context.font = "30px Verdana";
+	context.font = "18px Verdana";
 	context.fillStyle = 'black';
 	context.textAlign = 'center';
 	context.fillText('Click the button below to start', 250, 250);
+	context.fillText('Dont forget to use arrow keys to move the bag', 270, 270);
+
 }
 
 function drawEasy() {
