@@ -334,6 +334,11 @@
                                 Submit
                             </button>
 
+                            <a id="cancel" class="btn text-white justify-content-center"
+                                style="background-color: #08818d;" onclick="cancelCall()">Cancel</a>
+                            </button>
+
+
                             <!-- Modal -->
 
 
@@ -382,6 +387,13 @@
             var id = localStorage.getItem("recipeId");
             var str = "/recipe/" + id;
             console.log(str);
+            a.href = str;
+        }
+
+        function cancelCall() {
+            var a = document.getElementById('cancel');
+            var id = localStorage.getItem("recipeId");
+            var str = "/recipe/" + id;
             a.href = str;
         }
     </script>
