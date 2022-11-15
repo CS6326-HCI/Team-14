@@ -12,24 +12,47 @@
   </head>
   
   <body>
-    <header class="text-white" style="background-color: rgba(0, 0, 0, 0.816);">
-      <nav class="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand text-white" href="/dashboard">
-
-            <img src="/images/icon.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+    <nav class="navbar navbar-expand-lg custom-navbar text-white" style="background-color: rgba(0, 0, 0, 0.816);">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="/dashboard">
   
-            <b>EatBits</b>
+          <img src="/images/icon.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
   
+          <b>EatBits</b>
+  
+        </a>
+        <button class="navbar-toggler" type="button" height="16" width="16" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <span style="padding-left: 85%; padding-top: 0.5%;">
+          <h5>
+            <%= user.firstname %>
+          </h5>
+        </span>
+        <div class="dropdown dropstart">
+          <a class="btn btn-secondary" href="#" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bi bi-person-fill"></i>
           </a>
+  
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="/foodReport">Your Preference Reports</a></li>
+            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+            <li><a class="dropdown-item" href="/">Sign Out</a></li>
+        </ul>
         </div>
-      </nav>
-    </header>
+  
+  
+      </div>
+    </nav>
 
     <div class="wrapper">
 
       <!-- Sidebar -->
-      <div class="col-lg-2 col-md-3 px-sm-2  custom-navbar-sidemenu" style="height: 850px;">
+      <div class="col-lg-2 col-md-3 px-sm-2  custom-navbar-sidemenu flex-grow-1">
           <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
               <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
 
@@ -62,7 +85,7 @@
 
                   <li>
 
-                      <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+                      <a href="#" data-bs-toggle="collapse" class="nav-link px-0 align-left">
 
                           <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>Expert
                               Advice</span>
@@ -107,7 +130,7 @@
                   </li>
                   <li>
 
-                      <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+                      <a href="#" data-bs-toggle="collapse" class="nav-link px-0 align-left">
 
                           <span class="ms-1 sidemenu-buttons side-menu"><i
                                   class="bi bi-pin-map-fill"></i>Cuisine</span>
@@ -149,14 +172,15 @@
 
                   <li>
 
-                      <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
-
-                          <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-person"></i> Sign Out</span>
-
-                      </a>
-
-
-                  </li>
+                    <a href="/" class="nav-link align-start px-0" style="padding-top:20px">
+  
+                        <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-person"></i> Sign Out
+  
+                        </span>
+  
+                    </a>
+  
+                </li>
 
               </ul>
 
@@ -233,6 +257,7 @@
                               <button type="button" class="w-100 btn btn-lg text-white" style="background-color: #08818d;"  onclick="location.href='/dashboard';">Home page</button>
                           </div>
                           <hr class="my-4">
+                          <br><br><br><br><br><br><br><br><br><br><br>
                       </div>
                     </form>
                   </div>
