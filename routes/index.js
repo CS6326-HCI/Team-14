@@ -4,7 +4,8 @@ const fs = require("fs");
 
 const account = require('../account.json')
 var recipejson = require('../recipes.json');
-var loginerror = ""
+var loginerror = "";
+var accounterror = "";
 var currentprofile;
 var title;
 var videoUrl;
@@ -67,14 +68,24 @@ router.post('/', function (req, res) {
 
 // Sign Up page
 router.get('/register', function (req, res) {
-  res.render('register');
+  res.render('register', {accounterror : accounterror});
 });
 
 router.post('/register', function (req, res) {
+  var same = 0;
   let firstname = req.body.firstName;
   let lastname = req.body.lastName;
   let email = req.body.email;
   let pwd = req.body.pwd;
+  for (var i = 0; i < account.length; i++) {
+    if (account[i].username == email) {
+      same = 1;
+      accounterror = "Account with this email already exists! Please use a different email or login with an existing account!!";
+      res.redirect('/register');
+    }
+  } 
+if(same == 0)
+{
   let newuser = {
     "username": email,
     "password": pwd,
@@ -85,6 +96,7 @@ router.post('/register', function (req, res) {
     "childrenage": [],
     "childrenallergy": []
   }
+
   account.push(newuser);
   fs.writeFile("account.json", JSON.stringify(account), err => {
     // Checking for errors
@@ -92,12 +104,14 @@ router.post('/register', function (req, res) {
   });
   currentprofile = newuser;
   loginerror = "";
+  accounterror = "";
   res.redirect('/profile');
+}
 });
 
 // Profile page
 router.get('/profile', function (req, res) {
-  res.render('profile', { user: currentprofile });
+  res.render('profile', { user: currentprofile});
 });
 
 router.post('/profile', function (req, res) {
@@ -109,16 +123,28 @@ router.post('/profile', function (req, res) {
   if (count) {
     currentprofile.countchildren = count;
   }
+  currentprofile.childrenname = [];
+  currentprofile.childrenage = [];
+  currentprofile.childrenallergy = [];
 
+  if (count < 2)
+  {
+    currentprofile.childrenname.push([childname]);
+  currentprofile.childrenage.push([childage]);
+  currentprofile.childrenallergy.push([allergy]);
+  }
+  else {
   currentprofile.childrenname.push(childname);
   currentprofile.childrenage.push(childage);
   currentprofile.childrenallergy.push(allergy);
+  }
 
 
   fs.writeFile("account.json", JSON.stringify(account), err => {
     if (err) throw err;
   });
   loginerror = "";
+  accounterror = "";
   res.redirect('/profile');
 });
 

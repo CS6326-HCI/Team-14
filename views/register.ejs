@@ -48,6 +48,11 @@
         <div class="row g-5">
             <div class="col-md col-lg">
               <h4 class="mb-3">Account Details</h4>
+              <% if (accounterror != "" ) { %>
+                <div class="alert alert-danger" role="alert">
+                  <%= accounterror %>
+                </div>
+                <% } %>
               <form id="creationform" action = '/register' method = "POST">
                 <div class="row g-3">
                     <div class="col-sm-6">
