@@ -11,6 +11,7 @@ var videoUrl;
 var withKids;
 var withoutKids;
 var ingredients;
+var Id;
 
 // Home or Landing page
 router.get('/', function (req, res, next) {
@@ -21,13 +22,12 @@ router.get('/', function (req, res, next) {
 
 
 router.get('/recipe/:id', function (req, res) {
-
   recipeId = req.params.id;
   let recipe = null;
   for (let i = 0; i < recipejson.length; i++) {
     if (recipejson[i].Id == recipeId) {
       recipe = recipeDetails(recipejson[i].Name, recipejson[i].Url,
-        recipejson[i].WithKids, recipejson[i].WithOutKids, recipejson[i].Ingredients);
+        recipejson[i].WithKids, recipejson[i].WithOutKids, recipejson[i].Ingredients, recipejson[i].Id);
     }
   }
 
@@ -35,12 +35,13 @@ router.get('/recipe/:id', function (req, res) {
 });
 
 
-function recipeDetails(title, videoUrl, withKids, withoutKids, ingredients) {
+function recipeDetails(title, videoUrl, withKids, withoutKids, ingredients, Id) {
   this.title = title;
   this.videoUrl = videoUrl;
   this.withKids = withKids;
   this.withoutKids = withoutKids;
   this.ingredients = ingredients;
+  this.Id = Id;
   return this;
 }
 

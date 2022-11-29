@@ -60,7 +60,7 @@
           <li><a class="dropdown-item" href="/foodReport">Your Preference Reports</a></li>
           <li><a class="dropdown-item" href="/profile">Profile</a></li>
           <li><a class="dropdown-item" href="/">Sign Out</a></li>
-      </ul>
+        </ul>
       </div>
 
 
@@ -194,13 +194,13 @@
 
             <a href="/" class="nav-link align-start px-0" style="padding-top:20px">
 
-                <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-person"></i> Sign Out
+              <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-person"></i> Sign Out
 
-                </span>
+              </span>
 
             </a>
 
-        </li>
+          </li>
 
         </ul>
 
@@ -753,17 +753,20 @@
         <h5 class="card-title" data-title> <b>Ingredients: </b>${recipe.Ingredients}</h5>
         <p class="card-text" data-body><i class="bi bi-star-fill"></i> <b> Avg User Rating: </b> ${recipe.Rating}</p>
         <p class="card-text" data-body><b> Cootking Time: </b> ${recipe.CookingTime} mins</p>
-        <a href="/recipe/${recipe.Id}" class="btn text-white" style="background-color: #08818d;">View recipe</a>
+        <a href="/recipe/${recipe.Id}"class="btn text-white" id= "alink" style="background-color: #08818d;"  onclick='getId(${recipe.Id})' )">View recipe</a>
       </div>
     </div>
   </div>`;
-
-      localStorage.setItem("recipeId", recipe.Id);
       mainContainer.innerHTML += results;
     })
 
   }
 
+  function getId(id) {
+    localStorage.setItem("recipeId", id);
+    var elemnt = document.getElementById('alink');
+    elemnt.href = "/recipe/" + id;
+  }
 
 
   /*Search functionality*/
