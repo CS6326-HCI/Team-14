@@ -261,6 +261,7 @@
             <br>
 
           </form>
+          <h6 style="padding-left:15px">Click on "Reset" to reset the current results and view all recipes available</h6>
           <div>
             <label for="sorting" id="sortingLabel">Sort By:</label>
 
@@ -754,14 +755,19 @@
 
   let filteredList = []
   let results = []
+  const mainContainer = document.getElementById("MainContent");
 
 
 
   var render = function (data) {
-    const mainContainer = document.getElementById("MainContent");
+   
     results = [];
     console.log(data)
     mainContainer.innerHTML = "";
+    if(data.length==0){
+      mainContainer.innerHTML+=`<h1 class="errorMessage">No Recipes found</h1>`
+    }
+  
     data.map(recipe => {
 
       const card = document.createElement('div');
@@ -837,6 +843,11 @@
     for (var i = 1; i < myArray.length; i++)
       if (myArray[i] != undefined)
         searchTerm += myArray[i] + " ";
+
+  if(searchTerm==""){
+      mainContainer.innerHTML+=`<h1 class="errorMessage">Enter a value to search </h1>`
+
+    }
 
     // Tokenize the search terms and remove empty spaces
     var tokens = searchTerm
