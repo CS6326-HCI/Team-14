@@ -347,6 +347,7 @@ function gameOver() {
 	context.font = "15px Verdana";
 	context.fillText('Favoured Ingredients: ' + newArr, x, 300);
 	$('.myButtonR').css('display', 'inline-block');
+	$('.quit').css('display', 'none');
 
 	var obj = new player(localStorage.getItem("player"), newArr);
 	var array = [];
