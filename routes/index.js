@@ -20,8 +20,6 @@ router.get('/', function (req, res, next) {
   res.render('index', { loginmessage: loginerror });
 });
 
-
-
 router.get('/recipe/:id', function (req, res) {
   recipeId = req.params.id;
   let recipe = null;
@@ -68,7 +66,7 @@ router.post('/', function (req, res) {
 
 // Sign Up page
 router.get('/register', function (req, res) {
-  res.render('register', {accounterror : accounterror});
+  res.render('register', { accounterror: accounterror });
 });
 
 router.post('/register', function (req, res) {
@@ -83,35 +81,34 @@ router.post('/register', function (req, res) {
       accounterror = "Account with this email already exists! Please use a different email or login with an existing account!!";
       res.redirect('/register');
     }
-  } 
-if(same == 0)
-{
-  let newuser = {
-    "username": email,
-    "password": pwd,
-    "firstname": firstname,
-    "lastname": lastname,
-    "countchildren": 0,
-    "childrenname": [],
-    "childrenage": [],
-    "childrenallergy": []
   }
+  if (same == 0) {
+    let newuser = {
+      "username": email,
+      "password": pwd,
+      "firstname": firstname,
+      "lastname": lastname,
+      "countchildren": 0,
+      "childrenname": [],
+      "childrenage": [],
+      "childrenallergy": []
+    }
 
-  account.push(newuser);
-  fs.writeFile("account.json", JSON.stringify(account), err => {
-    // Checking for errors
-    if (err) throw err;
-  });
-  currentprofile = newuser;
-  loginerror = "";
-  accounterror = "";
-  res.redirect('/profile');
-}
+    account.push(newuser);
+    fs.writeFile("account.json", JSON.stringify(account), err => {
+      // Checking for errors
+      if (err) throw err;
+    });
+    currentprofile = newuser;
+    loginerror = "";
+    accounterror = "";
+    res.redirect('/profile');
+  }
 });
 
 // Profile page
 router.get('/profile', function (req, res) {
-  res.render('profile', { user: currentprofile});
+  res.render('profile', { user: currentprofile });
 });
 
 router.post('/profile', function (req, res) {
@@ -127,16 +124,15 @@ router.post('/profile', function (req, res) {
   currentprofile.childrenage = [];
   currentprofile.childrenallergy = [];
 
-  if (count < 2)
-  {
+  if (count < 2) {
     currentprofile.childrenname.push([childname]);
-  currentprofile.childrenage.push([childage]);
-  currentprofile.childrenallergy.push([allergy]);
+    currentprofile.childrenage.push([childage]);
+    currentprofile.childrenallergy.push([allergy]);
   }
   else {
-  currentprofile.childrenname.push(childname);
-  currentprofile.childrenage.push(childage);
-  currentprofile.childrenallergy.push(allergy);
+    currentprofile.childrenname.push(childname);
+    currentprofile.childrenage.push(childage);
+    currentprofile.childrenallergy.push(allergy);
   }
 
 
