@@ -14,6 +14,12 @@
         background: #fcc;
         border: 2px solid #c99;
       }
+      .btn:active {
+        outline-color: #08818d;
+      }
+      btn:active {
+        color:#08818d;
+      }
   </style>
   </head>
   
@@ -42,6 +48,11 @@
         <div class="row g-5">
             <div class="col-md col-lg">
               <h4 class="mb-3">Account Details</h4>
+              <% if (accounterror != "" ) { %>
+                <div class="alert alert-danger" role="alert">
+                  <%= accounterror %>
+                </div>
+                <% } %>
               <form id="creationform" action = '/register' method = "POST">
                 <div class="row g-3">
                     <div class="col-sm-6">
@@ -81,10 +92,10 @@
                 <hr class="my-4">
                 <div class="row">
                     <div class="col">
-                        <button class="w-100 btn btn-success btn-lg" type="submit">CREATE ACCOUNT</button>
+                        <button class="w-100 btn btn-lg text-white" type="submit" style="background-color: #08818d;">CREATE ACCOUNT</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="w-100 btn btn-outline-success btn-lg" onclick="location.href='/';">Cancel</button>
+                        <button type="button" class="w-100 btn btn-lg text-white" style="background-color: #08818d;" onclick="location.href='/';">Cancel</button>
                     </div>
                     <hr class="my-4">
                 </div>

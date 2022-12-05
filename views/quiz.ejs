@@ -135,7 +135,7 @@
                 <button id="btn3"><span id="choice3"></span></button>
             </div>
             <hr style="margin-top: 50px">
-
+            <a href="/activities" type="button" class="btn btn-danger">Quit Quiz</a>
             <footer>
                 <p id="progress">Question x of y</p>
             </footer>
@@ -193,16 +193,12 @@
 
         function showScores() {
             var gameOverHTML = "<h1>EatBits Preference Report</h1>";
-            gameOverHTML += "<h2 class='text-center'> Excellent you have completed the Game </h2>";
-            gameOverHTML += "<h3 id='score'> Your favoured ingredients: " + quiz.selected + "</h3>";
-            gameOverHTML += "  <a href='/foodReport' class='btn btn-success mx-auto'>View Your Report</a>"
-            // var favIngre = [];
-            // favIngre.push(quiz.selected.toString());
-            // favIngre.push(localStorage.getItem("fav"));
-            // localStorage.setItem("fav", favIngre);
-            // var obj = new Array(new player(localStorage.getItem("player"), quiz.selected));
-            var obj = new player(localStorage.getItem("player"), quiz.selected);
+            gameOverHTML += "<h2 class='text-center'> Excellent you have completed the Quiz </h2><br>";
+            gameOverHTML += "<h3 id='score'> Your favoured ingredients: " + quiz.selected + "</h3><br>";
+            gameOverHTML += " <button class='btn text-white mx-auto btn-lg' style='background-color: #08818d;'' onClick='replay()'>Play Again!</button>";
+            gameOverHTML += " <a href='/foodReport' class='btn text-white mx-auto btn-lg' style='background-color: #08818d;'>Get Your Report</a>"
 
+            var obj = new player(localStorage.getItem("player"), quiz.selected);
             var array = [];
             array.push(obj);
             var temp = localStorage.getItem("playerInfo");
@@ -214,15 +210,6 @@
                 }
             }
             localStorage.setItem("playerInfo", JSON.stringify(array));
-
-            //Object.keys(localStorage.getItem("playerInfo")).forEach((prop) => console.log(prop));
-
-            // var back = [];
-
-            // back = localStorage.getItem("playerInfo");
-            // back2 = JSON.parse(back);
-            // console.log(back2[0].name);
-
             var element = document.getElementById("quiz");
             element.innerHTML = gameOverHTML;
         };
@@ -230,9 +217,9 @@
         var selected = [];
         // create questions
         var questions = [
-            new Question("Select you favourite fruit", ["Apple", "Blueberry", "Mango", "Strawberry"]),
-            new Question("Select you favourite vegetable", ["Bellpepper", "Broccoli", "Spinach", "Tomato"]),
-            new Question("Select you favourite snack", ["Burger", "Fries", "Pasta", "Sandwich"])
+            new Question("Which of these fruits are on you mind this week?", ["Apple", "Blueberry", "Mango", "Strawberry"]),
+            new Question("Which of these vegetables are on you mind this week?", ["Bellpepper", "Broccoli", "Spinach", "Tomato"]),
+            new Question("Which of these snacks are on you mind this week?", ["Burger", "Fries", "Pasta", "Sandwich"])
         ];
 
         function Question(text, choices) {
@@ -254,6 +241,10 @@
             var info = [];
 
 
+        }
+
+        function replay() {
+            location.reload();
         }
 
         //  const selected = [];

@@ -8,23 +8,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-
+    <title>Food Report</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <title>Food Report</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body {
 
-
-
+            background-color: #E6E6FA;
+            background: url('/images/foodreportbg2.webp') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
 </head>
 
-<body class="p-3 m-0 border-0 bd-example">
+<body>
 
     <!--navBar start Here-->
 
-    <nav class="navbar navbar-expand-lg navbar-light static-top custom-navbar bg-dark text-white">
+    <nav class="navbar navbar-expand-lg custom-navbar text-white" style="background-color: rgba(0, 0, 0, 0.816);">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="/dashboard">
 
@@ -38,19 +47,12 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="ml-auto mr-auto col-lg-4 col-md-12 p-0">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success text-white" type="submit"
-                            style="color:black">Search</button>
-                    </form>
-                </div>
 
-
-
-            </div>
-            <span style="padding-right: 1%; padding-top: 0.5%;"><h5> <%= user.firstname %> </h5></span>
+            <span style="padding-left: 85%; padding-top: 0.5%;">
+                <h5>
+                    <%= user.firstname %>
+                </h5>
+            </span>
             <div class="dropdown dropstart">
                 <a class="btn btn-secondary" href="#" type="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                     aria-expanded="false">
@@ -58,9 +60,9 @@
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Your Preference Reports</a></li>
-                    <li><a class="dropdown-item" href="#">Account Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                    <li><a class="dropdown-item" href="/foodReport">Your Preference Reports</a></li>
+                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                    <li><a class="dropdown-item" href="/">Sign Out</a></li>
                 </ul>
             </div>
 
@@ -73,34 +75,48 @@
     <div class="wrapper">
 
         <!-- Sidebar -->
-        <div class="col-lg-2 col-md-3 px-sm-2 px-md-0 py-1 custom-navbar-sidemenu">
+        <div class="col-lg-2 col-md-3 px-sm-2  custom-navbar-sidemenu" style="height: 850px;">
             <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
-
                 <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
 
                     <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-left "
-                            style="padding-top:40px">
+                        <a href="/search" class="nav-link align-start px-0" style="padding-top:40px">
+
                             <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-search-heart-fill"></i>
-                                Recipes</span></i></a>
+                                Recipes
 
-                    </li>
+                            </span>
 
-
-                    <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-left ">
-                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-file-bar-graph-fill"></i>
-                                Preference Report</span></a>
-
-                    </li>
-                    <li>
-                        <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-left">
-                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i> Get
-                                Expert Advice</span>
                         </a>
 
                     </li>
 
+
+                    <li>
+
+                        <a href="/foodReport" class="nav-link px-0 align-left">
+
+                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>Food
+                                Preference Reports</span>
+
+                        </a>
+
+
+                    </li>
+
+
+
+                    <li>
+
+                        <a href="#" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+
+                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>Expert
+                                Advice</span>
+
+                        </a>
+
+
+                    </li>
 
                 </ul>
 
@@ -111,35 +127,91 @@
             <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
 
                 <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
+
                     <li>
                         <a href="#" class="nav-link align-start px-0" style="padding-top:40px">
+
                             <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-egg-fill"></i> Food
+
                             </span>
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-left ">
-                            <span class="ms-1 sidemenu-buttons side-menu "><i class="bi bi-bell-fill"></i>
-                                Quiz</span></i></a>
-
-                    </li>
-                    <li>
-                        <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-left">
-                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-pin-map-fill"></i>
-                                Cuisine</span>
                         </a>
 
                     </li>
 
 
+
+                    <li>
+
+                        <a href="/activities" class="nav-link px-0 align-left">
+
+                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-bell-fill"></i>Quiz</span>
+
+                        </a>
+
+
+                    </li>
+                    <li>
+
+                        <a href="#" data-bs-toggle="collapse" class="nav-link px-0 align-left">
+
+                            <span class="ms-1 sidemenu-buttons side-menu"><i
+                                    class="bi bi-pin-map-fill"></i>Cuisine</span>
+
+                        </a>
+
+
+                    </li>
 
                 </ul>
 
 
+            </div>
+
+
+            <!--Extra profile Options-->
+
+
+
+            <div class="d-flex flex-column  align-items-left align-items-sm-start side-menu-list">
+
+
+
+                <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
+
+                    <li>
+
+                        <a href="/profile" class="nav-link align-start px-0" style="padding-top:40px">
+
+                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-gear"></i>Profile
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+
+                    <li>
+
+                        <a href="/" class="nav-link align-start px-0" style="padding-top:20px">
+      
+                            <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-person"></i> Sign Out
+      
+                            </span>
+      
+                        </a>
+      
+                    </li>
+
+                </ul>
+
 
             </div>
 
+            <br>
+            <br>
 
         </div>
 
@@ -161,7 +233,8 @@
                 </tbody>
             </table>
 
-            <a href="/search" class="btn btn-success justify-content-center">Search Recipes Now!!</a>
+            <a href="/search" class="btn btn-sm text-white" class="btn text-white"
+                style="background-color: #08818d;">Search Recipes Now!!</a>
         </div>
 
     </div>
@@ -208,8 +281,9 @@
 
     -->
 
+
     <!--footer-->
-    <footer class="text-center text-white" style="background-color: rgba(14, 13, 13, 0.811);">
+    <footer class="text-center text-white" style="background-color: rgba(0, 0, 0, 0.816);">
         <!-- Grid container -->
         <div class="container pt-4">
             <!-- Section: Social media -->
@@ -238,7 +312,7 @@
         <!-- Grid container -->
 
         <!-- Copyright -->
-        <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="text-center text-light p-3">
             © 2022 Copyright:
             <a class="text-light" href="https://mdbootstrap.com/">Team-14EatBits.com</a>
         </div>

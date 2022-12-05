@@ -103,6 +103,21 @@
             position: relative;
             top: 1px;
         }
+
+        .quit {
+            background-color: #f02424;
+            -moz-border-radius: 28px;
+            -webkit-border-radius: 28px;
+            border-radius: 28px;
+            border: 1px solid #94351e;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Verdana;
+            font-size: 17px;
+            padding: 16px 31px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #662828;
+        }
     </style>
 </head>
 
@@ -115,10 +130,11 @@
     <h2>
         <!-- <button class="myButtonE" onClick="drawEasy()">EASY</button> -->
 
-        <button class="myButtonH" onClick="drawHard()">Start Game</button>
+        <button class="myButtonH" style="background-color: #08818d;" onClick="drawHard()">Start Game</button>
+        <a href="/activities" class="quit">Quit Game</a>
     </h2>
-    <h2><button class="myButtonR" onClick="replay()">PLAY AGAIN!</button>
-        <a class="myButtonR" href="/foodReport">GET YOUR REPORT</a>
+    <h2><button class="myButtonR" style="background-color: #08818d;" onClick="replay()">PLAY AGAIN!</button>
+        <a class="myButtonR" style="background-color: #08818d;" href="/foodReport">GET YOUR REPORT</a>
         <img id="candy" src="images/img/pasta.png" style="display:none">
         <img id="tomato" src="images/img/tomato.png" style="display:none">
         <img id="pasta" src="images/img/cotton.png" style="display:none">
