@@ -1,110 +1,5 @@
-
-/*search Bar*/
-.search-wrapper {
-  padding-bottom: 50px;
-  padding-top: 250px;
-  padding-left: 150px;
-   flex-direction: column;
-   gap: .25rem;
-   padding: 40px;
-   margin: 0 auto;
-   max-width: 1000px;
-   text-align: relative;
-   
- }
- #sortingLabel{
-  font-size: large;
-  padding-left: 50px;
- }
- #sorting{
-  font-size: large;
- }
-
-
- .card-header{
-   font-weight: bold;
-   font-size: large;
-   font-variant-caps: petite-caps;
- }
-
- .card-title{
-   font-size: 20px;
- }
-
- input {
-   font-size: 3rem;
-   max-height: 42px;
-   border: 1px solid #08818d;
-   border-radius: 5px;
-   
- }
-
- .card {
-   border: 1px solid black;
-   background-color: white;
-   padding: .5rem;
-   padding-left: 20px;
-   
- }
- 
-
- .hide {
-   display: none;
- }
-
-
- /*inserting new*/
- #searchBar {
-   width: 10%;
-   height: 25px;
-   border-radius: 3px;
-   border: 1px solid #08818d;
-   padding: 5px 10px;
-   font-size: 12px;
-   border-width: 3px;
-}
-::placeholder{
- color:black
-}
-
-#searchWrapper {
-   position: relative;
-   font-size: small;
-}
-
-
-#searchWrapper::after {
-  
-   position: relative;
-   top: 7px;
-   right: 15px;
-}
-
-h1 {
- color: rgb(41, 37, 37);
- margin-bottom: 30px;
-}
-
-
-/*sidemenu CSS*/
-
-
-.wrapper {
- display: flex;
- width: 100%;
- align-items: stretch;
-}
-
-.wrapper {
- display: flex;
- align-items: stretch;
-}
-/*body styling*/
-
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-family: 'Poppins', sans-serif;
-  background: #fafafa;
 }
 
 a {
@@ -127,60 +22,206 @@ a {
 }
 
 
-p {
- font-family: 'Poppins', sans-serif;
- font-size: 1.1em;
- font-weight: 300;
- line-height: 1.7em;
- color: #999;
+/*header style info*/
+
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
 }
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+}
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+}
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+}
+
+
+
+#sidebar {
+  /* don't forget to add all the previously mentioned styles here too */
+  background: black;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: black;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid black;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: #fff;
+  background: black;
+}
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: darkgrey;
+}
+
+#sidebarCollapse{
+  background-color: black;
+}
+
+
+.custom-navbar {
+  background-color: white;
+}
+
+.btn-secondary{
+  background-color: black;
+}
+
+.dropdown-toggle::after{
+  background-color: black;
+}
+
+
+
 
 /*sidemenu styling*/
 
 
 
 
-
 .side-menu{
- color:white;
- font-size: 18px;
-
-
+  color:white;
+  font-size: 18px;
+ 
+ 
 }
 
 .sidemenu-buttons{
- padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .side-menu-list{
- padding-bottom: 50px;
- border-bottom: 2px solid #ddd !important;
+  padding-bottom: 50px;
+  border-bottom: 2px solid #ddd !important;
 
 }
-
-
 
 .custom-navbar-sidemenu{
- background-color:rgba(0, 0, 0, 0.816);
-
+  background-color: rgba(0, 0, 0, 0.816);
+ 
 
 }
 
 
-/*buttons styling*/
-/*new searchBar CSS*/
-#searchSubmit{
-  background-color: #08818d;
-
- }
- #reset{
-  background-color: #08818d;
-
- }
 
 
- .errorMessage{
+
+
+
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 40px;
+  
+  }
+  
+  .sidebar a {
+  padding: 8px;
+  font-size: 200px;
+  display: block;
+  text-decoration: none;
+ 
+  }
+  
+  .sidebar a:hover {
+  cursor: pointer;
+  opacity: .9;
+  }
+  
+  
+
+  
+@media screen and (max-width: 700px) {
+.sidebar {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.sidebar a {float: left;}
+div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+.sidebar a {
   text-align: center;
-  padding-top: 20px;
+  float: none;
+}
+}
 
- }
+
+/* header style ends here*/
