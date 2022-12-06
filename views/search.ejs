@@ -24,7 +24,7 @@
 
   <!--External Links-->
 
-  <link rel="stylesheet" href="/stylesheets/styleSearch.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 
   <style>
     .chip {
@@ -755,6 +755,7 @@
 
   let filteredList = []
   let results = []
+  
   const mainContainer = document.getElementById("MainContent");
 
 
@@ -767,7 +768,7 @@
     if(data.length==0){
       mainContainer.innerHTML+=`<h1 class="errorMessage">No Recipes found</h1>`
     }
-  
+    
     data.map(recipe => {
 
       const card = document.createElement('div');
@@ -782,7 +783,7 @@
       <div class="card-body">
         <h5 class="card-title" data-title> <b>Ingredients: </b>${recipe.Ingredients}</h5>
         <p class="card-text" data-body><i class="bi bi-star-fill"></i> <b> Avg User Rating: </b> ${recipe.Rating}</p>
-        <p class="card-text" data-body><b> Cootking Time: </b> ${recipe.CookingTime} mins</p>
+        <p class="card-text" data-body><b> Cooking Time: </b> ${recipe.CookingTime} mins</p>
         <a href="/recipe/${recipe.Id}"class="btn text-white" id= "alink" style="background-color: #08818d;"  onclick='getId(${recipe.Id})' )">View recipe</a>
       </div>
     </div>
@@ -836,18 +837,22 @@
 
   var handleSearch = function (event) {
     event.preventDefault();
+    filteredList = [];
     // Get the search terms from the input field
     var text = event.target.elements['search'].value;
     const myArray = text.split(",");
-    var searchTerm = myArray[0];
-    for (var i = 1; i < myArray.length; i++)
+    var searchTerm = "";
+    for (var i = 0; i < myArray.length; i++)
       if (myArray[i] != undefined)
         searchTerm += myArray[i] + " ";
+        
+    if(searchTerm==" "){
+        mainContainer.innerHTML= " "
+        mainContainer.innerHTML+=`<h1 class="errorMessage">Enter a value to search </h1>`
+          
 
-  if(searchTerm==""){
-      mainContainer.innerHTML+=`<h1 class="errorMessage">Enter a value to search </h1>`
+          }
 
-    }
 
     // Tokenize the search terms and remove empty spaces
     var tokens = searchTerm
@@ -859,7 +864,9 @@
     if (tokens.length) {
       //  Create a regular expression of all the search terms
       var searchTermRegex = new RegExp(tokens.join('|'), 'gim');
-      filteredList = [];
+      console.log(searchTermRegex)
+      
+     
       filteredList = recipes.filter(function (recipe) {
         // Create a string of all object values
         var recipeString = '';
@@ -875,12 +882,13 @@
         return recipeString.match(searchTermRegex);
       });
 
-      console.log(filteredList)
+     
 
 
       localStorage.setItem("filteredRecipe", JSON.stringify(filteredList));
 
       // Render the search results
+       console.log(filteredList)
 
       render(filteredList);
 
