@@ -26,6 +26,31 @@
 
   <link rel="stylesheet" href="/stylesheets/styleSearch.css">
 
+  <style>
+    .chip {
+      display: inline-block;
+      padding: 0 25px;
+      height: 50px;
+      font-size: 18px;
+      line-height: 50px;
+      border-radius: 25px;
+      background-color: #f1f1f1;
+    }
+
+    .closebtn {
+      padding-left: 10px;
+      color: #888;
+      font-weight: bold;
+      float: right;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .closebtn:hover {
+      color: #000;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -222,11 +247,11 @@
         <div class="searchWrapper">
           <form class="form-inline">
 
-            <div class="form-group mx-sm-3 mb-3" id="search-books">
+            <div class="form-group mx-sm-3 mb-3 " id="search-books">
               <label for="search" class="sr-only">Search Recipes</label>
               <!-- <input type="text" name="search" > -->
-              <input type="text" id="search" class="form-control" placeholder="Enter you ingredients"
-                aria-label="Recipient's username with two button addons">
+              <input type="text" id="search" class="form-control" style="width:400px" placeholder="Enter you ingredients"
+                aria-label="Recipient's username with two button addons" data-role="tagsinput">
             </div>
             <button name="search_btn" id="searchSubmit" type="submit" class="btn btn-primary mb-3">Search</button>
             &nbsp;
@@ -236,6 +261,7 @@
             <br>
 
           </form>
+          <h6 style="padding-left:15px">Click on "Reset" to reset the current results and view all recipes available</h6>
           <div>
             <label for="sorting" id="sortingLabel">Sort By:</label>
 
@@ -729,15 +755,20 @@
 
   let filteredList = []
   let results = []
+  
+  const mainContainer = document.getElementById("MainContent");
 
 
 
   var render = function (data) {
-    const mainContainer = document.getElementById("MainContent");
+   
     results = [];
     console.log(data)
     mainContainer.innerHTML = "";
-
+    if(data.length==0){
+      mainContainer.innerHTML+=`<h1 class="errorMessage">No Recipes found</h1>`
+    }
+    
     data.map(recipe => {
 
       const card = document.createElement('div');
@@ -752,7 +783,7 @@
       <div class="card-body">
         <h5 class="card-title" data-title> <b>Ingredients: </b>${recipe.Ingredients}</h5>
         <p class="card-text" data-body><i class="bi bi-star-fill"></i> <b> Avg User Rating: </b> ${recipe.Rating}</p>
-        <p class="card-text" data-body><b> Cootking Time: </b> ${recipe.CookingTime} mins</p>
+        <p class="card-text" data-body><b> Cooking Time: </b> ${recipe.CookingTime} mins</p>
         <a href="/recipe/${recipe.Id}"class="btn text-white" id= "alink" style="background-color: #08818d;"  onclick='getId(${recipe.Id})' )">View recipe</a>
       </div>
     </div>
@@ -768,13 +799,61 @@
     elemnt.href = "/recipe/" + id;
   }
 
+  window.addEventListener("load", (event) => {
+    var info = JSON.parse(localStorage.getItem("playerInfo"));
+    document.getElementById('search').value = info.at(0).result;
+    if (localStorage.getItem("filteredRecipe") != "") {
+      data = JSON.parse(localStorage.getItem("filteredRecipe"))
 
+      const mainContainer = document.getElementById("MainContent");
+      results = [];
+
+      mainContainer.innerHTML = "";
+      data.map(recipe => {
+
+        const card = document.createElement('div');
+        card.classList = 'card-body';
+
+        const results = `  <div class="container-fluid">
+
+<div class="card w-75 mb-4 ml-5">
+<div class="card-header" data-header>
+<h2>${recipe.Name}</h2>
+</div>
+<div class="card-body">
+<h5 class="card-title" data-title> <b>Ingredients: </b>${recipe.Ingredients}</h5>
+<p class="card-text" data-body><i class="bi bi-star-fill"></i> <b> Avg User Rating: </b> ${recipe.Rating}</p>
+<p class="card-text" data-body><b> Cootking Time: </b> ${recipe.CookingTime} mins</p>
+<a href="/recipe/${recipe.Id}"class="btn text-white" id= "alink" style="background-color: #08818d;"  onclick='getId(${recipe.Id})' )">View recipe</a>
+</div>
+</div>
+</div>`;
+        mainContainer.innerHTML += results;
+      })
+    }
+
+  });
   /*Search functionality*/
 
   var handleSearch = function (event) {
     event.preventDefault();
+    filteredList = [];
     // Get the search terms from the input field
-    var searchTerm = event.target.elements['search'].value;
+    var text = event.target.elements['search'].value;
+    const myArray = text.split(",");
+    var searchTerm = "";
+    for (var i = 0; i < myArray.length; i++)
+      if (myArray[i] != undefined)
+        searchTerm += myArray[i] + " ";
+        
+    if(searchTerm==" "){
+        mainContainer.innerHTML= " "
+        mainContainer.innerHTML+=`<h1 class="errorMessage">Enter a value to search </h1>`
+          
+
+          }
+
+
     // Tokenize the search terms and remove empty spaces
     var tokens = searchTerm
       .toLowerCase()
@@ -785,7 +864,9 @@
     if (tokens.length) {
       //  Create a regular expression of all the search terms
       var searchTermRegex = new RegExp(tokens.join('|'), 'gim');
-      filteredList = [];
+      console.log(searchTermRegex)
+      
+     
       filteredList = recipes.filter(function (recipe) {
         // Create a string of all object values
         var recipeString = '';
@@ -801,10 +882,14 @@
         return recipeString.match(searchTermRegex);
       });
 
-      console.log(filteredList)
+     
 
+
+      localStorage.setItem("filteredRecipe", JSON.stringify(filteredList));
 
       // Render the search results
+       console.log(filteredList)
+
       render(filteredList);
 
 
@@ -860,7 +945,7 @@
       })
     }
 
-
+    localStorage.setItem("filteredRecipe", JSON.stringify(filteredList));
 
     render(filteredList)
 
