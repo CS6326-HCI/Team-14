@@ -226,7 +226,14 @@
 
 
         <!-- Page Content -->
-        <div id="content" class="mx-auto" style="margin-top:120px;margin-bottom: 30px;">
+        <div id="content" class="mx-auto" style="margin-top:50px;margin-bottom: 30px;">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                  <li class="breadcrumb-item"><a href="#">Quiz</a></li>
+                 
+                </ol>
+              </nav>
             <h2> Enter your Name & Select the game you would like to play !!</h2>
             <form class="d-flex" onsubmit="store()">
                 <input id="playerName" class="form-control me-2 border-bottom " placeholder="Enter Name" required>
