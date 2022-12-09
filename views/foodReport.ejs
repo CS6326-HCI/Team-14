@@ -26,6 +26,12 @@
             -o-background-size: cover;
             background-size: cover;
         }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            color: #fff;
+            background-color: #08818d;
+        }
     </style>
 </head>
 
@@ -94,7 +100,7 @@
 
                     <li>
 
-                        <a href="/foodReport" class="nav-link px-0 align-left">
+                        <a href="/foodReport" class="nav-link px-0 align-left active">
 
                             <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-chat-right-text"></i>Food
                                 Preference Reports</span>
@@ -196,13 +202,13 @@
                     <li>
 
                         <a href="/" class="nav-link align-start px-0" style="padding-top:20px">
-      
+
                             <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-person"></i> Sign Out
-      
+
                             </span>
-      
+
                         </a>
-      
+
                     </li>
 
                 </ul>
