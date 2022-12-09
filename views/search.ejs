@@ -49,6 +49,12 @@
     .closebtn:hover {
       color: #000;
     }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+      color: #fff;
+      background-color: #08818d;
+    }
   </style>
 
 </head>
@@ -103,7 +109,7 @@
         <ul class="nav nav-pills flex-column align-items-sm-left px-3 side-menu-list1" id="menu">
 
           <li>
-            <a href="/search" class="nav-link align-start px-0" style="padding-top:40px">
+            <a href="/search" class="nav-link align-start px-0 active" style="padding-top:40px">
 
               <span class="ms-1 sidemenu-buttons side-menu"><i class="bi bi-search-heart-fill"></i>
                 Recipes
@@ -250,8 +256,9 @@
             <div class="form-group mx-sm-3 mb-3 " id="search-books">
               <label for="search" class="sr-only">Search Recipes</label>
               <!-- <input type="text" name="search" > -->
-              <input type="text" id="search" class="form-control" style="width:400px" placeholder="Enter you ingredients"
-                aria-label="Recipient's username with two button addons" data-role="tagsinput">
+              <input type="text" id="search" class="form-control" style="width:400px"
+                placeholder="Enter you ingredients" aria-label="Recipient's username with two button addons"
+                data-role="tagsinput">
             </div>
             <button name="search_btn" id="searchSubmit" type="submit" class="btn btn-primary mb-3">Search</button>
             &nbsp;
@@ -261,7 +268,8 @@
             <br>
 
           </form>
-          <h6 style="padding-left:15px">Click on "Reset" to reset the current results and view all recipes available</h6>
+          <h6 style="padding-left:15px">Click on "Reset" to reset the current results and view all recipes available
+          </h6>
           <div>
             <label for="sorting" id="sortingLabel">Sort By:</label>
 
@@ -755,20 +763,20 @@
 
   let filteredList = []
   let results = []
-  
+
   const mainContainer = document.getElementById("MainContent");
 
 
 
   var render = function (data) {
-   
+
     results = [];
     console.log(data)
     mainContainer.innerHTML = "";
-    if(data.length==0){
-      mainContainer.innerHTML+=`<h1 class="errorMessage">No Recipes found</h1>`
+    if (data.length == 0) {
+      mainContainer.innerHTML += `<h1 class="errorMessage">No Recipes found</h1>`
     }
-    
+
     data.map(recipe => {
 
       const card = document.createElement('div');
@@ -800,8 +808,12 @@
   }
 
   window.addEventListener("load", (event) => {
-    var info = JSON.parse(localStorage.getItem("playerInfo"));
-    document.getElementById('search').value = info.at(0).result;
+    if (localStorage.getItem("playerInfo") != "") {
+      var info = JSON.parse(localStorage.getItem("playerInfo"));
+
+      document.getElementById('search').value = info.at(0).result;
+    }
+
     if (localStorage.getItem("filteredRecipe") != "") {
       data = JSON.parse(localStorage.getItem("filteredRecipe"))
 
@@ -845,13 +857,13 @@
     for (var i = 0; i < myArray.length; i++)
       if (myArray[i] != undefined)
         searchTerm += myArray[i] + " ";
-        
-    if(searchTerm==" "){
-        mainContainer.innerHTML= " "
-        mainContainer.innerHTML+=`<h1 class="errorMessage">Enter a value to search </h1>`
-          
 
-          }
+    if (searchTerm == " ") {
+      mainContainer.innerHTML = " "
+      mainContainer.innerHTML += `<h1 class="errorMessage">Enter a value to search </h1>`
+
+
+    }
 
 
     // Tokenize the search terms and remove empty spaces
@@ -865,8 +877,8 @@
       //  Create a regular expression of all the search terms
       var searchTermRegex = new RegExp(tokens.join('|'), 'gim');
       console.log(searchTermRegex)
-      
-     
+
+
       filteredList = recipes.filter(function (recipe) {
         // Create a string of all object values
         var recipeString = '';
@@ -882,13 +894,13 @@
         return recipeString.match(searchTermRegex);
       });
 
-     
+
 
 
       localStorage.setItem("filteredRecipe", JSON.stringify(filteredList));
 
       // Render the search results
-       console.log(filteredList)
+      console.log(filteredList)
 
       render(filteredList);
 
